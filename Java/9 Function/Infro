@@ -1,0 +1,37 @@
+Function
+---------
+Function is a self contained block of statement.Every function performs some specific task. 
+
+Types of Functions : 
+    1. InBuilt function | BuiltIn function | Predefined function | standard function | Library function :
+
+    Function whose definition is already defined
+
+    2. Userdefined function : 
+
+    Function whose definition is defined according to programmers need
+
+Features | Advantages of functions : 
+
+    1. Function reduces complexity
+    2. Function increases code reusability
+    3. Function makes debugging easier
+    4. Function reduces Redundancy of code
+    5. Function reduces program size
+    6. We can create n number of functions
+    7. A function can be called n number of times
+
+Function can be categorized as : 
+
+1. No argument with No return type
+    addition();               void addition(){}     
+
+2. No argument with return type
+    int res = addition();     int addition(){ return } 
+
+3. With argument and No return type
+    addition(5,6);            void addition(int a,int b){}
+
+4. With argument and with return type
+   int res=addition(5,6); int addition(int a,int b){ return }
+    

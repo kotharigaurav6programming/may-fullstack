@@ -1,0 +1,36 @@
+Formatting Tag
+--------------
+<b>             boldness
+<i>             italic
+<u>             underline
+
+<strong>        bold (html5)
+<em>            italic (html5)
+
+<big>           font size > normal size
+<small>         font size < normal size
+
+<sup>           in power
+<sub>           in base
+
+<mark>          higlight text 
+<strike>        line through (deprecated)
+<q>             double quotes
+<del>           line through
+<blockquote>    indentation
+<center>        align content in center
+
+Heading Tag
+|- <h1> 32 px (pixel = picture element)
+|- <h2> 24 px
+|- <h3> 19 px 
+|- <h4> 16 px default font size
+|- <h5> 13 px
+|- <h6> 11 px
+
+<marquee>       for moving text 
+<code>          something needs to write in code form 
+<pre>           pre formatted tag
+<address>       italic  
+<font color="" face="">
+    here face means font family    

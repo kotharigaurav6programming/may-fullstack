@@ -1,0 +1,57 @@
+Procedure Oriented Programming language
+---------------------------------------
+It is a way of writing a list of instructions for the computer to follow and this instructions are arranged in a group and this groups are known as functions.
+
+Characteristics of POP's : 
+--------------------------
+1. Here Large programs are divided into smaller programs which are known as functions.
+2. Data revolves around the system.
+3. Functions can access global data.
+4. Functions can transform data.
+5. Follows top down approach.
+
+Object Oriented programming language
+------------------------------------
+It is a way of modularizing a program which allocates partitioned memory area for both data and function and using them as a template and call the copies of such modules on demand.
+
+Characteristics of OOP's:
+-------------------------
+1. Here large programs are divided into what are known as objects.
+2. Follows bottom to up approach.
+3. Data is hidden and cannot be accessible from outside world. 
+4. Objects may communicate with each other through functions.
+5. New data can be added anywhere when ever required. 
+
+Oop's Concept : 
+---------------
+1. Object
+    -- object is a real world entity and also termed as a run time entity.
+    -- every object have some physical existance that why we can call it as a physical entity.
+    -- Every object belongs to some specific class.
+    -- objects may communicate with each other through functions.
+    -- every object have some state(data composition) and behaviour.
+
+2. Class
+    -- class is a userdefined blueprint for creating objects.
+    -- class is a logical entity.
+    -- class consists of data members and member functions
+    -- we can create n number of objects in a class
+    
+3. Inheritance
+4. Encapsulation
+5. Abstraction
+6. Polymorphism
+
+
+Object oriented vs object based programming language
+---------------     ------------------------------
+Language follows all oops concept = object oriented programming language
+Language follows all oops concept except inheritance and run time polymorphism = object based programming lannguage (ADA)
+
+purely object oriented programming language vs fully object oriented programming language : 
+---------------------------------------------------------------------
+
+A language follows all oops concepts = fully object oriented prog. language
+ex: c++, java
+
+A language which is completely dependent upon object is considered as purely object oriented programming language . ex: smalltalk 

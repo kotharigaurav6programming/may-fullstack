@@ -1,0 +1,15 @@
+Table Tag
+---------
+<table> 
+<thead>
+<tbody>
+<tfoot>
+<tr>
+<td>
+<th>
+<caption>
+<colgroup>
+<cols>
+
+multiple rows ----> single row (rowspan)
+multiple columns ----> single column (colspan)

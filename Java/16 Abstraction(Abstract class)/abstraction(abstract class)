@@ -1,0 +1,17 @@
+Abstraction : Abstraction is the process of hiding implementation details and showing only functionality to the user. If we want to achieve the functionality of abstraction, then in that case we can implement the concept of Abstract class and interface.
+
+Abstract class : 
+
+1. For making any class as an abstract class, we needs to put abstract keyword followed by the class name.
+
+2. Its not mandatory to make abstract method inside class to make a class as an abstract class.
+
+3. Abstract class can contains abstract method(definition part of a method is absent), concrete method (definition part of a method is present), constructor. 
+
+4. Abstract class cannot be instantiated which means we cannot create object of abstract class.
+
+5. If a class contains abstract method and if any child class extends that class, then in that case its mandatory for the child class to give the implementation of that abstract method, otherwise it will give you compilation error.
+
+6. Abstract class can give the the reference to the child class where child class can create object in reference with abstract parent class.
+
+7. If we want to achieve some functionalities forcefully from the child class then in that case we create abstract parent class.

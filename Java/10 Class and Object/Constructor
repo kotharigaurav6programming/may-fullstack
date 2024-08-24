@@ -1,0 +1,12 @@
+Constructor
+-----------
+1. Constructor is a special member function. 
+2. Name of Constructor is same as class name.
+3. Constructor does not return any value not even void.
+4. Constructor will be called automatically, when ever object of a class is created.
+5. Initial work of Constructor is to construct class.
+6. Constructor is responsible for providing default initial values to data members.
+7. Types of Constructor : 
+    a. Default constructor | No argument constructor
+    b. Parameterized constructor 
+    c. Copy constructor (default copy constructor is absent)

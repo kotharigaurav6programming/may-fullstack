@@ -1,0 +1,29 @@
+    Nested class in java : 
+    --------------------
+    In java,it is possible to have a class inside another class and such class is known as nested class in java. It is mainly used to achieve encapsulation in more efficient manner and to make code more readable and maintanable.
+
+    syntax:
+
+        class OuterClass{ // enclosing class
+            ....
+                class InnerClass{ // nested class
+                    ......
+                }
+            ....
+        } 
+
+    Keypoints : 
+    1. Scope of nested class lies inside the enclosing class.
+    
+    2. Nested class is also considered as a member of enclosing class, so nested class can be public, private, default(package private) and protected.
+    
+    3. As nested class is the member of enclosing class, so it can access members of enclosing class (including private members also)
+    
+    4. As nested class is a member of enclosing class, so enclosing class cannot access the members of nested class
+
+    Types of nested class : 
+    1. Static nested class
+    2. Non static nested class
+        a. Member class
+        b. Local class
+        c. Anonymous class

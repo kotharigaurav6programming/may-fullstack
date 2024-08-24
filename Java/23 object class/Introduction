@@ -1,0 +1,29 @@
+
+Object class | Introduction
+----------------------------
+
+Object class is the parent class of every class in java, every class whether directly or indirectly extends Object class.
+
+--------------------------
+class Object{}
+class Hello extends Object{}
+--------------------------
+
+class Object{}
+class Parent extends Object{} <---- Parent directly extending Object class
+class Child extends Parent{} <-- Child class indirectly extending Object class
+---------------------------
+
+Methods of Object class : 
+-------------------------
+1. toString()
+2. hashCode()
+3. equals()
+4. getClass()
+5. finalize()
+6. clone()
+7. wait()
+8. notify()
+9. notifyAll()
+10. wait(args1)
+11. wait(args1,args2)

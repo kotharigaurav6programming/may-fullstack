@@ -1,0 +1,15 @@
+Static Keyword
+--------------
+|-- block
+|-- variable
+|-- function
+|-- class
+
+|-- block : static block will call before the main method.
+|-- variable : 1. static variable can also be termed as class variable.
+               2. single copy of static variable is going to be create.
+               3. If we make any variable as a static, then in that case , we do not need to create the object of a class to access that static variable, static variable is directly accessed by class name.   
+|-- function : 1. static function can also be termed as class function.
+               2. If we make any function as a static, then in that case , we do not need to create the object of a class to call that static function, static function is directly accessed by class name.
+               3. static functions can be overloaded but cannot be overriden.
+|-- class : we can also create static class.(nested class)

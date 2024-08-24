@@ -1,0 +1,34 @@
+Interface : 
+-----------
+
+1. With the help of Interface we can achieve 100% abstraction.
+2. Interface is used to achieve loose coupling.
+3. It is also helpful in achieving the functionality of multiple inheritance in java. 
+4. We define interface by interface keyword.
+   syntax : 
+                interface <interface_name>{
+
+                }  
+    example : 
+                interface Showable{
+                    .....
+                }
+5. Methods(member functions) inside interface is by default public abstract and data members are by default public static final.
+
+
+ interface Video     interface Second
+  users()              display()
+    |_____________________|
+             |         |_____________
+           whatsapp                  |
+           show(){                zoom
+            5 users                show(){
+            chating                  100 users
+           }                         chating  
+                                     whiteboard
+                                     documents share
+                                     } 
+
+6. Interface extends Interface, whereas class implements Interface
+7. In java8, we can also gives the definition part of method with the help of default and static keywords.
+8. In Java9, we can also create private method inside interface     

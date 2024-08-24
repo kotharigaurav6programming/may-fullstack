@@ -1,0 +1,12 @@
+Final Keyword
+-------------
+|-- variable
+|-- method
+|-- class
+
+|-- variable : If we put final Keyword infront of any variable then that variable is considered as a constant.
+Note : Default Constructor does not initialize final variable.
+
+|-- method : if we make any method as a final, then in that case, we cannot override that method.
+
+|-- class : if we make any class as a final then in that case we cannot extend that class.

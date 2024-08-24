@@ -1,0 +1,34 @@
+List Tag
+--------
+<ul>    unordered list
+<ol>    ordered list
+<li>    list item
+<dl>    data list    
+<dt>    data term
+<dd>    data definition
+
+<ul type="disc">
+<ul type="circle">
+<ul type="square">
+<ul type="none">
+
+<ol type="1">    
+<ol type="a">    
+<ol type="A">    
+<ol type="i">    
+<ol type="I">    
+<ol type="1" start="100">    
+
+1. Unordered List
+    <ul>
+        <li></li>
+        <li></li>
+        ....
+    </ul>
+
+2. Ordered List
+    <ol>
+        <li></li>
+        <li></li>
+        .....
+    </ol>
