@@ -1,0 +1,30 @@
+Form Tag
+--------
+<form action="" method="get | post">
+<input type="" placeholder="">
+    type = "text"
+    type = "password" (html5)
+    type = "email"    (html5)
+    type = "date"     (html5)
+    type = "time"     (html5)
+    type = "month"    (html5)
+    type = "week"     (html5) 
+    type = "color"    (html5)
+    type = "url"      (html5)
+    type = "radio"
+    type = "checkbox"
+    type = "file"
+    type = "number" 
+    type = "submit"
+    type = "reset" 
+
+Username <input type="text" id="username" name="username"> 
+Email <input type="text" id="" name=""> 
+    
+<button>
+<select>
+<option value="">
+<label for="id_name">
+<legend>
+<fieldset> 
+<textarea rows="" cols="" placeholder="">

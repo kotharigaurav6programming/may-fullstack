@@ -1,15 +1,15 @@
 Table Tag
 ---------
-<table> 
-<thead>
-<tbody>
-<tfoot>
-<tr>
-<td>
-<th>
-<caption>
-<colgroup>
-<cols>
+<table> = table 
+<thead> = table head
+<tbody> = table body
+<tfoot> = table foot
+<tr>    = table row
+<td>    = table data (column)
+<th>    = table heading (column names is in bold)
+<caption> = table name
+<colgroup> = group of column
+<col> = columns
 
 multiple rows ----> single row (rowspan)
 multiple columns ----> single column (colspan)
