@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Internal CSS -->
+    <style>
+
+selectors
+ |---
+        color:red;
+        font-size:30px;
+selectors
+ |---    
+        color:green;
+        font-size:35px;
+    
+    </style>
+</head>
+<body>
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est unde numquam, reiciendis nemo veritatis tempore adipisci, architecto nisi temporibus illum dolorum?
+    </div>
+    <p>
+        Velit excepturi voluptatem totam illum. Ratione enim vel odit. Perspiciatis corporis asperiores labore nemo similique in laudantium vitae veritatis!
+    </p>
+</body>
+</html>
+
+
+Types of Selectors : 
+
+1. Element Selector (Tag Selector)
+syntax : 
+element_name{
+    property_name : value;
+    property_name : value;
+        |             |
+}
+
+example : 
+div{
+    color:red;
+    font-size : 34px;
+}
+
+2. Id selector (#)
+syntax :
+<element_name id="id_name"> ... </element_name> 
+
+#id_name{
+    property_name : value;
+    property_name : value;
+        |             |
+}
+
+example : 
+<div id="demo"> ... </div>
+
+#demo{
+    color:red;
+    font-size : 34px;
+}
+
+3. Class selector (.)
+syntax :
+<element_name class="class_name"> ... </element_name> 
+
+.class_name{
+    property_name : value;
+    property_name : value;
+        |             |
+}
+
+example : 
+<div class="demo"> ... </div>
+
+.demo{
+    color:red;
+    font-size : 34px;
+}
+
+4. Grouping selector 
+   
+   <element1></element1>
+   <element2></element2>
+   
+   element1,element2{
+     property : value;
+     property : value;
+         |        |
+   }
+example : 
+<div></div>
+<span></span>
+
+div,span{
+    color:red;
+    background-color:blue;
+}
+
+5. Universal Selector 
+
+*{
+    property_name:value;
+         |         |
+}
+
+6. Descendant selector
+
+span{
+    color:red;
+}
+
+div span{          <------- descendent selector
+    color:blue;
+}
+
+div p span{         <------- descendent selector
+    color: green;
+}
+
+<div>
+    <span></span> <----------- blue
+    <p>
+        <span></span> <----------- green    
+    </p>    
+</div>
+
+<span></span> <----------- red
+
+

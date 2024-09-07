@@ -27,3 +27,5 @@ Methods of Object class :
 9. notifyAll()
 10. wait(args1)
 11. wait(args1,args2)
+
+
