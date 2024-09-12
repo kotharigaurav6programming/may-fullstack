@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            div{
+                height:200px;
+                width: 200px;
+                border-style: solid;
+                border-width: 2px;
+                border-color: black;
+                float: left;
+                margin: 20px;
+            }
+            .demo1{
+                border-radius: 20px;
+                background-color: yellow;
+            }            
+            .demo2{
+                border-radius: 50px;
+                background-color: green;
+            }            
+            .demo3{
+                border-radius: 50%;
+                background: linear-gradient(white,darkslategrey);
+            }            
+            .demo4{
+                border-radius: 0% 100% 0% 0%;
+                background: linear-gradient(white,darkslategrey,black);
+            }            
+            .demo5{
+                border-radius: 100% 100% 0% 0%;
+                background: linear-gradient(90deg,white,darkslategrey,black);
+            }            
+            .demo6{
+                border-radius: 100% 0% 100% 0%;
+                background: radial-gradient(white,darkslategrey);
+            }            
+            .demo7{
+                border-radius: 23px 48px 82px 29px;
+                background: repeating-linear-gradient(white 20%,darkslategrey 40%);
+            }            
+            .demo8{
+                border-radius: 100% 100% 100% 0%;
+                background: repeating-radial-gradient(white 20%,darkslategrey 40%);
+            }            
+        </style>
+    </head>
+    <body>
+        <div class="demo1"></div>
+        <div class="demo2"></div>
+        <div class="demo3"></div>
+        <div class="demo4"></div>
+        <div class="demo5"></div>
+        <div class="demo6"></div>
+        <div class="demo7"></div>
+        <div class="demo8"></div>
+    </body>
+</html>
