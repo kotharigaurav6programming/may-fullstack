@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Adjacent sibling selector */
+        /* div+span{
+            background-color: red;
+            color:white;
+        } */
+
+        /* Direct child selector */
+         /* div>span{
+            background-color: green;
+            color:white;
+        }  */
+
+        /* General sibling selector */
+         div~span{
+            background-color: orange;
+            color:white;
+        } 
+
+    </style>
+</head>
+<body>
+    <div>
+        <span>
+           1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, tempore.
+        </span>
+        <p>
+            <span>
+              2.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, tenetur.
+            </span>
+        </p>
+        <span>
+            3.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente, quia?
+        </span>
+    </div>
+    <span>
+        4.Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, maxime.
+    </span>
+
+    <p>
+        <span>
+          5.  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum, cupiditate?
+        </span>
+    </p>
+    <span>
+        6.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident, doloribus.
+    </span>
+</body>
+</html>

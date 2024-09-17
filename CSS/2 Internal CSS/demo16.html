@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Pseudo element selector */
+
+        /* ul::first-line{
+            background-color: red;
+        } */
+
+        /* li::first-line{
+            background-color: red;
+        } */
+
+        /* li::first-letter{
+            color: red;
+        } */
+
+        li::marker{
+            color:olivedrab;
+        }
+
+        /* Pseudo class selector */
+        li:nth-of-type(even){
+            background-color: orange;
+            color:white;
+        }
+
+        li:hover{
+            font-family: cursive;
+        }
+
+        a:active{
+            color:green;
+        }
+</style>
+</head>
+<body>
+    
+    <ul>
+        <li>Item1</li>
+        <li>Item2</li>
+        <li>Item3</li>
+        <li>Item4</li>
+        <li>Item5</li>
+    </ul>
+    
+    <a href="">Click Me</a>
+</body>
+</html>

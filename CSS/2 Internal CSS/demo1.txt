@@ -130,4 +130,15 @@ div p span{         <------- descendent selector
 
 <span></span> <----------- red
 
+7. Advanced selectors
+    i. Adjacent sibling selector
+    ii. Direct child selector
+    iii. General sibling selector
+    iv. Attribute selector 
+    v. nth-of-type selector 
+
+8. Pseudo element selector(::) 
+9. Pseudo class selector(:) 
+
+
 

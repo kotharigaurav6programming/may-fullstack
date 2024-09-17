@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* attribute selector */
+        input[type='email']{
+            background-color: wheat;
+            color:orange;
+            font-family: cursive;
+        }
+        input[type='password']{
+            background-color: black;
+            color:red;
+        }
+        /* Pseudo element selector */
+        span::before{
+            content: "Before";
+        }
+        span::after{
+            content: "After";
+        }
+        input::placeholder{
+            color:green;
+        }
+    </style>
+</head>
+<body>
+    
+    <span>#</span>
+    <input type="email" placeholder="Enter email"><br><br>
+    <span>#</span>
+    <input type="password" placeholder="Enter password"><br>
+    
+</body>
+</html>
