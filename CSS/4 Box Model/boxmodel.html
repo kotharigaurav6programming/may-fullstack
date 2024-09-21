@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outerdiv{
+            height: 500px;
+            width: 500px;
+            border-style: solid;
+            margin:auto;
+            background-color: darkslategray;
+        }
+        #innerdiv{
+            height: 400px;
+            width: 400px;
+            border-style: solid;
+            background-color: grey;
+            margin:50px;
+            border-width: 50px;
+            padding:50px;
+            box-sizing: border-box;
+        }
+        #subdiv{
+            height: 200px;
+            width: 200px;
+            border-style: solid;
+            background-color: lightgrey;
+        }
+    </style>
+</head>
+<body>
+    <center><h2>Box Model</h2></center>
+    <div id="outerdiv">
+        <div id="innerdiv">
+            <div id="subdiv"></div>
+        </div>
+    </div>
+</body>
+</html>
