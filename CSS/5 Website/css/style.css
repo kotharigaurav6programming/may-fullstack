@@ -17,6 +17,8 @@
 #nav{
     height: 50px;
     background-color: goldenrod;
+    position: sticky;
+    top:0;
 }
 #nav ul{
     list-style: none;
@@ -55,4 +57,136 @@
 #banner_img{
     height: 560px;
     width: 100%;
+}
+#section{
+    background-color: whitesmoke;
+    padding: 40px;
+}
+#section h1{
+    font-family: candara;
+    margin: 15px;
+}
+#section p{
+    font-family: candara;
+    margin: 15px;
+    font-size: 22px;
+    text-align: justify;
+}
+#box{
+    height: 400px;
+    background-color: lightgoldenrodyellow;
+}
+#box1{
+    height: 350px;
+    width: 29.5%;
+    margin: 25px;
+    float: left;
+    /* overflow: hidden; */
+}
+#box2{
+    height: 350px;
+    width: 29%;
+    margin: 25px;
+    float: left;
+}
+#box3{
+    height: 350px;
+    width: 29.5%;
+    margin: 25px;
+    float: left;
+}
+#box_image{
+    height: 280px;
+    width: 100%;
+    border-radius: 30px;
+    transition: 2s;
+}
+#box_image:hover{
+    transform: scale(1.1);
+    /* transform: rotate(360deg); */
+    box-shadow: 1px 1px 10px 1px;
+    border-radius: 50%;
+}
+#box_btn{
+    background-color: goldenrod;
+    color:white;
+    height: 30px;
+    width: 30px;
+    border-width: 0px;
+}
+#box_input{
+    margin-top: 15px;
+    height: 25px;
+    width: 240px;
+    text-align: center;
+}
+.margin_btn{
+    margin-left: 20px;
+}
+#about{
+    padding: 40px;
+    font-family: candara;
+    height:400px;
+    background-color: whitesmoke;
+}
+#about_left{
+    float: left;
+    margin: 20px;
+    height: 330px;
+    width: 330px;
+}
+#about_right{
+    padding: 25px;
+    float: left;
+    margin: 20px;
+    height: 280px;
+    width: 710px;
+    text-align: justify;
+    font-size: 20px;
+}
+#about_banner{
+    height: 330px;
+    width: 330px;
+    border-radius: 50%;
+}
+#contact{
+    height: 400px;
+    background-color: green;
+    padding: 40px;
+    font-family: candara;
+}
+#contact1{
+    height: 350px;
+    width: 240px;
+    background-color: red;
+    margin: 10px;
+    padding: 10px;
+    float: left;
+}
+#contact2{
+    height: 350px;
+    width: 240px;
+    background-color: red;
+    margin: 10px;
+    padding: 10px;
+    float: left;
+}
+#contact3{
+    height: 350px;
+    width: 240px;
+    background-color: red;
+    margin: 10px;
+    padding: 10px;
+    float: left;
+}
+#contact4{
+    height: 370px;
+    width: 320px;
+    background-color: red;
+    margin: 10px;
+    float: left;
+}
+iframe{
+    height: 370px;
+    width: 320px;
 }

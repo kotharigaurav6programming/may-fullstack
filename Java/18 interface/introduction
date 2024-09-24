@@ -19,7 +19,7 @@ Interface :
  interface Video     interface Second
   users()              display()
     |_____________________|
-             |         |_____________
+             |            |__________
            whatsapp                  |
            show(){                zoom
             5 users                show(){
@@ -32,3 +32,11 @@ Interface :
 6. Interface extends Interface, whereas class implements Interface
 7. In java8, we can also gives the definition part of method with the help of default and static keywords.
 8. In Java9, we can also create private method inside interface     
+
+
+interface demo{                 interface demo2{
+  chating                         video calling  
+}                               }
+    |_________________________________|   |
+                    |                     |
+                 MyApp               MyAnotherApp
