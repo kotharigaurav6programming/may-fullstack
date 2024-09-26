@@ -1,0 +1,11 @@
+
+@media |--screen  and ( |-- max-width : 360px)
+       |--all           |-- min-width : 360px
+       |--print         |-- orientation : landscape
+       |--speech        |-- orientation : portrait
+
+{
+    ........
+    ........ 
+    ........
+}

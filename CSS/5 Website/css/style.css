@@ -126,7 +126,7 @@
 #about{
     padding: 40px;
     font-family: candara;
-    height:400px;
+    height:500px;
     background-color: whitesmoke;
 }
 #about_left{
@@ -150,43 +150,61 @@
     border-radius: 50%;
 }
 #contact{
-    height: 400px;
-    background-color: green;
+    height: 450px;
     padding: 40px;
     font-family: candara;
+    background-color: black;
+    color:white;
 }
 #contact1{
     height: 350px;
     width: 240px;
-    background-color: red;
     margin: 10px;
     padding: 10px;
     float: left;
+    color:white;
 }
 #contact2{
     height: 350px;
     width: 240px;
-    background-color: red;
     margin: 10px;
     padding: 10px;
     float: left;
+    color:white;
 }
 #contact3{
     height: 350px;
     width: 240px;
-    background-color: red;
     margin: 10px;
     padding: 10px;
     float: left;
+    color:white;
 }
 #contact4{
     height: 370px;
     width: 320px;
-    background-color: red;
     margin: 10px;
     float: left;
+    color:white;
 }
 iframe{
     height: 370px;
     width: 320px;
+}
+#contact1 ul li a,#contact2 ul li a{
+    text-decoration: none;
+    line-height: 40px;
+    color:white;
+    font-size: 20px;
+}
+#contact3 span{
+    font-size: 20px;
+}
+
+#footer{
+    background-color: whitesmoke;
+    color:black;
+    font-size: 18px;
+    font-family: candara;
+    padding: 10px;
 }
