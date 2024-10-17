@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo{
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+            background-color: red;
+            animation-name: animation_example;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes animation_example {
+           from{
+            background-color: blue;
+           } 
+           to{
+            background-color: purple;
+           }
+        }
+    </style>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+</html>

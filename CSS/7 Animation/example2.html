@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo{
+            height: 300px;
+            width: 300px;
+            background-color: red;
+            animation-name: animation_example;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes animation_example {
+           0%{
+            background-color: blue;
+           } 
+           25%{
+            background-color: purple;
+           }
+           50%{
+            border-radius: 50%;
+            background-color: red;
+           } 
+           75%{
+            background-color: green;
+           }
+           100%{
+            background-color: orange;
+           } 
+        }
+    </style>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+</html>

@@ -209,7 +209,24 @@ iframe{
     padding: 10px;
 }
 
+#humberlogo{
+    height:25px;
+}
+#humber,label{
+    display: none;
+}
+
+#caretlogo{
+    position: absolute;
+    height: 25px;
+}
 @media screen and (max-width:360px){
+    #caretlogo{
+        margin-top: 5px;
+        margin-left: 2px;
+        height: 20px;
+        transform: rotate(270deg);
+    }
     *{
         margin: 0px;
     }
@@ -227,7 +244,7 @@ iframe{
         font-size: 28px;
     }
     #nav{
-        height: auto;
+        height: 40px;
         background-color: goldenrod;
         position: sticky;
         top:0;
@@ -255,14 +272,37 @@ iframe{
     #nav ul li:hover ul{
         display: block;
         position: absolute;
-        width: 150px;
-        background-color: goldenrod;
-        margin-left: 340px;
+        width: 90px;
+        background-color: lightgoldenrodyellow;
+        margin-left: 60px;
+        margin-top:-90px;
     }
     #nav ul li ul li{
-        margin-left: -70px;
-        line-height: 40px;
+        margin-left: 10px;
+        line-height: 30px;
     }
+    /* Humberger logic starts */
+    #nav ul{
+        visibility: hidden;
+    }
+    #nav ul li ul{
+        visibility: visible;
+    }
+    label{
+        display: block;
+        float: right;
+        margin-top: 8px;
+        margin-right: 20px;
+    }
+    #humber:checked~ul{
+        visibility: visible;
+        background-color: goldenrod;
+        line-height: 30px;
+        margin-top: 40px;
+        position: absolute;
+        width: 100%;
+    }
+    /* Humberger logic ends */
     #images{
         height: 260px;
     }

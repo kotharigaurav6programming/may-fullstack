@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #flex-container{
+            height:auto;
+            width: 90%;
+            border-style: solid;
+            margin: auto;
+            display: flex;
+            /* flex-direction: column; */
+            /* flex-direction: row; */
+            /* flex-wrap: nowrap; */
+            /* flex-wrap: wrap; */
+            /* justify-content: center; */
+            justify-content: flex-end;
+            flex-direction: row-reverse;
+            flex-wrap: wrap-reverse;
+        }
+        #demo{
+            margin:10px;
+            height: 160px;
+            width: 160px;
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+    <div id="flex-container">
+        <div id="demo" style="background-color: red;"></div>
+        <div id="demo" style="background-color: green;"></div>
+        <div id="demo" style="background-color: blue;"></div>
+        <div id="demo" style="background-color: pink;"></div>
+        <div id="demo" style="background-color: orange;"></div>
+    </div>
+</body>
+</html>

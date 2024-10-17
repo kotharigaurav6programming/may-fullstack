@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo{
+            position: relative;
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            background-color: red;
+            animation-name: animation_example;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+            float:left;
+            animation-timing-function: ease-out;
+            margin: 20px;
+        }
+        @keyframes animation_example {
+           0%{
+            left:0px;
+            top:0px;
+            background-color: blue;
+           } 
+           100%{
+            left:0px;
+            top:300px; 
+            background-color: orange;
+           } 
+        }
+        #demo1{
+            position: relative;
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            background-color: red;
+            animation-name: animation_example1;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+            float:left;
+            margin: 20px;
+        }
+        @keyframes animation_example1 {
+           0%{
+            left:0px;
+            top:300px;
+            background-color: blue;
+           } 
+           100%{
+            left:0px;
+            top:0px; 
+            background-color: orange;
+           } 
+        }
+        #demo2{
+            position: relative;
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            background-color: red;
+            animation-name: animation_example2;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+            float:left;
+            margin: 20px;
+        }
+        @keyframes animation_example2 {
+           0%{
+            left:0px;
+            top:0px;
+            background-color: blue;
+           } 
+           100%{
+            left:0px;
+            top:300px; 
+            background-color: orange;
+           } 
+        }
+        #demo3{
+            position: relative;
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            background-color: red;
+            animation-name: animation_example3;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+            float:left;
+            margin: 20px;
+        }
+        @keyframes animation_example3 {
+           0%{
+            left:0px;
+            top:300px;
+            background-color: blue;
+           } 
+           100%{
+            left:0px;
+            top:0px; 
+            background-color: orange;
+           } 
+        }
+
+</style>
+</head>
+<body>
+    <div id="demo"></div>
+    <div id="demo1"></div>
+    <div id="demo2"></div>
+    <div id="demo3"></div>
+</body>
+</html>
