@@ -1,0 +1,18 @@
+<script>
+    var a = 100+null;
+    var b = 100+undefined;
+    var c = BigInt(100);
+    var d = Symbol(a);
+    document.write("<br>typeof a : "+typeof a);
+    document.write("<br>typeof b : "+typeof b);
+    document.write("<br>typeof c : "+typeof c);
+    document.write("<br>typeof d : "+typeof d);
+
+    document.write("<br>a : "+a);
+    document.write("<br>b : "+b);
+    document.write("<br>c : "+c+"<br>");
+     document.write(d.description);
+
+    const x = Symbol('hey');
+console.log(x.description); // Symbol(hey)
+</script>

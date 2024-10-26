@@ -1,0 +1,41 @@
+<!-- Type coercion -->
+<script>
+ var result;
+
+// Number to string
+ result = 100+"10";
+ document.write("<br>result : "+result);
+ result = true+"123";
+ document.write("<br>result : "+result);
+
+// String to Number
+ result = 100-"10";
+ document.write("<br><br>result : "+result);
+ result = 100*"10";
+ document.write("<br>result : "+result);
+ result = 100/"10";
+ document.write("<br>result : "+result);
+ result = 100%"10";
+ document.write("<br>result : "+result);
+
+// Boolean to number
+ result = true+123;
+ document.write("<br><br>result : "+result);
+ result = false-123;
+ document.write("<br>result : "+result);
+ result = true-"123";
+ document.write("<br>result : "+result);
+
+// Equility (comparision)
+ result = null==null;
+ document.write("<br><br>result : "+result);
+ result = null==undefined;
+ document.write("<br>result : "+result);
+ result = null==false;
+ document.write("<br>result : "+result);
+ result = null==0;
+ document.write("<br>result : "+result);
+ result = null>=0;
+ document.write("<br>result : "+result);
+
+</script>
