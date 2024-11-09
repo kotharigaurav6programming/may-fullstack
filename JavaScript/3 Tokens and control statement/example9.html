@@ -1,0 +1,25 @@
+<!-- Switch control statement -->
+
+<script>
+    var choice = "red", shades = "Light Red";
+    switch(choice.toLowerCase()){
+        case "red" : document.write("<br>Red Color");
+                    switch(shades.toLowerCase()){
+                        case "light red" : document.write("<br>Light Red Color");
+                                    break;
+                        case "dark red" : document.write("<br>Dark Red Color");
+                                    break;
+                        case "mid red" : document.write("<br>Mid Red Color");
+                                    break;
+                        default : document.write("<br>Invalid shades selection");
+                                    break;
+                    }
+                    break;
+        case "green" : document.write("<br>Green Color");
+                    break;
+        case "blue" : document.write("<br>Blue Color");
+                    break;
+        default : document.write("<br>Invalid selection");
+                    break;
+    }
+</script>

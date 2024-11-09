@@ -1,0 +1,36 @@
+<!-- Looping control statement -->
+
+<!-- 
+    5! = 1 x 2 x 3 x 4 x  5 = 120
+        /| / | / |  /|   /| 
+       1 1   |/  | / |  / |
+             2   |/  | /  |
+                 6   |/   |
+                    24    |
+                         120
+
+fact = 1;
+
+ fact   x   i   =  fact                            
+    1   x   1   =   1
+    ________________|
+    |
+    1   x   2   =   2
+    ________________|
+    |
+    2   x   3   =   6
+    ________________|
+    |
+    6   x   4   =  24                  
+    ________________|
+    |
+    24  x   5   =  120     
+-->  
+<script>
+    var num = 10,fact=1;
+    for(var i=1;i<=num;i++){
+        fact=fact*i;
+    }
+    document.write("Factorial : "+fact);
+
+</script>

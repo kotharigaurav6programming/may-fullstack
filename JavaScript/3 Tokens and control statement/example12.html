@@ -1,0 +1,25 @@
+<!-- Example of Loops  -->
+<script>
+    var arr = [1,2,3,4,5,6,7];
+    document.write("Array elements are : "+arr);
+    document.write("<br>");
+
+    // for in loop ----> basically works on indexing
+    document.write("Array elements are : <br>");
+    for(var index in arr){
+        document.write("arr["+index+"] : "+arr[index]+"<br>");
+    }
+
+    // for of loop ----> basically works on values
+    document.write("Array elements are : <br>");
+    for(var value of arr){
+        document.write("value : "+value+"<br>");
+    }
+
+    // for each loop --> iterates over array elements
+    document.write("Array elements are : <br>");
+    arr.forEach((element,i)=>{
+        document.write("<br>arr["+i+"] : "+element);
+    });
+</script>
+
