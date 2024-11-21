@@ -1,0 +1,14 @@
+<script>
+    // Immediately invoked Lambda expression | arrow function
+    var p = parseInt(prompt("Enter principal : "));
+    var r = parseInt(prompt("Enter rate : "));
+    var t = parseInt(prompt("Enter time : "));
+    
+    ((p,r,t)=>{
+        var amt = p*(1+r/100)**t;
+        document.write("<br>Amount : "+amt);
+
+        var ci = amt-p;
+        document.write("<br>Compound Interest : "+ci);
+    })(p,r,t);
+</script>

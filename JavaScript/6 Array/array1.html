@@ -1,0 +1,20 @@
+<script>
+    // One dimensional array
+
+    // var arr = [];
+    // document.write("type of arr : "+typeof arr);
+    
+    var arr = [1,2,3,4,5,34,56,7,75,43,444];
+    document.write("Array elements are : "+arr);
+    document.write("<br>Array length : "+arr.length);
+    document.write("<br>Sum of first and last element : "+(arr[0]+arr[arr.length-1]));
+    
+    var sum=0,count=0;    
+    for(var i=0;i<arr.length;i++){
+        sum += arr[i];
+        if(arr[i]%2==0)
+            count++;
+    }
+    document.write("<br>Sum : "+sum);
+    document.write("<br>No. of even elements : "+count);
+</script>

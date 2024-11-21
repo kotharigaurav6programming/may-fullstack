@@ -1,0 +1,40 @@
+<script>
+// Program showing the concept of array methods
+
+var arr = [31,20,9,11,92,113];
+document.write("Array elements are : "+arr);
+
+var data = arr.map((element)=>{
+    return element>=10;
+});
+document.write("<br>Result : "+data);
+
+var data = arr.filter((element)=>{
+    return element>=10;
+});
+document.write("<br>Result : "+data);
+
+var data = arr.find((element)=>{
+    return element>=10;
+});
+document.write("<br>Result : "+data);
+
+var data = arr.some((element)=>{
+    console.log(element);
+    return element>=50;
+});
+document.write("<br>Result : "+data);
+
+var data = arr.every((element)=>{
+    console.log(element);
+    return element>=50;
+});
+document.write("<br>Result : "+data);
+
+var data = arr.reduce((element,sum)=>{
+    console.log(element+"----------"+sum);
+    return element+sum;
+});
+document.write("<br>Result : "+data);
+
+</script>

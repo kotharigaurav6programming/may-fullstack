@@ -1,0 +1,29 @@
+<script>
+    var arr = [];
+    var rows = parseInt(prompt("Enter rows"));
+    var cols = parseInt(prompt("Enter columns"));
+    
+    for(i=0;i<rows;i++){
+        arr[i] = [];
+        for(j=0;j<cols;j++){
+            arr[i][j] = parseInt(prompt("Enter element"));
+        }
+    }
+    document.write("<br>Array elements are : <br>");
+    for(i=0;i<rows;i++){
+        for(j=0;j<cols;j++){
+            document.write(arr[i][j]+"&nbsp;&nbsp;&nbsp;&nbsp;")
+        }
+        document.write("<br>");
+    }
+
+</script>
+<!-- 
+HW
+1. WAP to find out sum of corner elements
+2. Program to find out sum of all the elements
+3. Sum of diagonal elements(LR)
+4. Sum of diagonal elements(RL)
+5. Program to check whether 2d array is unit matrix or not
+
+-->

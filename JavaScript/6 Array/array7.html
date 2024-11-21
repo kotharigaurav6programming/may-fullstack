@@ -1,0 +1,18 @@
+<script>
+// Program showing the concept of array methods
+
+var arr = [1,2,3,4,5,6];
+document.write("Array elements are : "+arr);
+
+arr.reverse();
+document.write("<br>reverse : Array elements are : "+arr);
+document.write("<br>includes : Array elements are : "+arr.includes(3));
+document.write("<br>indexOf : Array elements are : "+arr.indexOf(4));
+document.write("<br>slice : Array elements are : "+arr.slice(2,5));
+document.write("<br>max : Array elements are : "+Math.max(...arr));
+document.write("<br>min : Array elements are : "+Math.min(...arr));
+document.write("<br>apply max : Array elements are : "+Math.max.apply(null,arr));
+document.write("<br>apply min : Array elements are : "+Math.min.apply(null,arr));
+document.write("<br>max : Array elements are : "+Math.max(1,2,3,4,5,6));
+document.write("<br>min : Array elements are : "+Math.min(1,2,3,4,5,6));
+</script>
