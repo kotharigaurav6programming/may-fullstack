@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function checkPassword(){
+            var password = document.getElementById("password").value;
+            var cpassword = document.getElementById("cpassword").value;
+            var result = document.getElementById("result");
+            if(password==cpassword){
+                result.innerHTML = "Password Matched"
+                result.style.color="green";
+            }else{
+                result.innerHTML="Password Not Matched";
+                result.style.color="red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Check Password</h2>
+    <input type="text" placeholder="Enter Password" id="password">  <br>
+    <input type="text" placeholder="Enter Confirm Password" id="cpassword"> <br>
+    <input type="submit" value="Check Password" onclick="checkPassword()">
+    <h2>Status : <span id="result">Result Will Show Here</span></h2>
+</body>
+</html>
