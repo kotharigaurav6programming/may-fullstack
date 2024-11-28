@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function over(){
+            var over= document.getElementById("over");
+            over.style.backgroundColor="crimson";
+        }
+        function move(){
+            var move= document.getElementById("move");
+            move.style.color="darkgreen";
+        }
+        function enter(){
+            var enter= document.getElementById("enter");
+            enter.style.textTransform="uppercase";
+        }
+        function up(){
+            var up= document.getElementById("up");
+            up.style.textDecoration="line-through";
+        }
+        function down(){
+            var down= document.getElementById("down");
+            down.style.fontSize="30px";
+        }
+        function wheel(){
+            var wheel= document.getElementById("wheel");
+            wheel.style.fontFamily="cursive";
+        }
+        function leave(){
+            var leave= document.getElementById("leave");
+            leave.style.wordSpacing="20px";
+        }
+        function out(){
+            var out= document.getElementById("out");
+            out.style.lineHeight="40px";
+        }
+    </script>
+</head>
+<body>
+    <h2>Example Showing the concept of Mouse Event</h2>
+    <span id="over" onmouseover="over()">Over Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, eligendi?</span><br>
+    <span id="move" onmousemove="move()">Move Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, eligendi?</span><br>
+    <span id="enter" onmouseenter="enter()">Enter Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, eligendi?</span><br>
+    <span id="up" onmouseup="up()">Up Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, eligendi?</span><br>
+    <span id="down" onmousedown="down()">Down Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, eligendi?</span><br>
+    <span id="wheel" onmousewheel="wheel()">Wheel Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, eligendi?</span><br>
+    <span id="leave" onmouseleave="leave()">Leave Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, eligendi?</span><br>
+    <span id="out" onmouseout="out()">Out Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, eligendi?</span><br>
+</body>
+</html>

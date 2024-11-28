@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function foc(){
+            var email = document.getElementById("email");
+            email.style.backgroundColor="crimson";
+            email.style.color="white";
+        }
+        function blu(){
+            var password = document.getElementById("password");
+            password.style.backgroundColor="grey";
+            password.style.color="crimson";
+        }
+    </script>
+</head>
+<body>
+    <h1>Form Event</h1>
+    <form action="" onsubmit="alert('Login Successfull')">
+        <input id="email" type="email" placeholder="Enter Email" onfocus="foc()"><br>
+        <input id="password" type="password" placeholder="Enter Password" onblur="blu()"><br>
+        <input type="Submit" value="Submit"><br>
+    </form>
+</body>
+</html>

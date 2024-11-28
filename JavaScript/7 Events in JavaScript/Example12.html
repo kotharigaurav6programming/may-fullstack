@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: darkgreen;
+            padding: 10px;
+        }
+        h1{
+            background-color: crimson;
+            padding: 10px;
+            margin: 30px;
+        }
+        p{
+            background-color: orange;
+            padding: 10px;
+            margin: 30px;
+        }
+    </style>
+    <script>
+        function over(){
+            document.getElementById("over").innerHTML++;
+        }
+        function move(){
+            document.getElementById("move").innerHTML++;
+        }
+        function enter(){
+            document.getElementById("enter").innerHTML++;
+        }
+    </script>
+</head>
+<body>
+    <h2>Difference Between Mouse Over | Enter | Move</h2>
+   <div onmouseover="over()">
+    <h1>
+        <center>
+            MouseOver : <span id="over">0</span>
+        </center>
+    </h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil magnam architecto debitis corporis, natus numquam molestiae consectetur itaque! Fugiat quod hic corporis harum aut, nisi eaque tempora facere explicabo voluptatum?
+    </p>
+   </div><br>
+   <div onmouseenter="enter()">
+    <h1>
+        <center>
+            MouseEnter : <span id="enter">0</span>
+        </center>
+    </h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil magnam architecto debitis corporis, natus numquam molestiae consectetur itaque! Fugiat quod hic corporis harum aut, nisi eaque tempora facere explicabo voluptatum?
+    </p>
+   </div><br>
+   <div onmousemove="move()">
+    <h1>
+        <center>
+            MouseMove : <span id="move">0</span>
+        </center>
+    </h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil magnam architecto debitis corporis, natus numquam molestiae consectetur itaque! Fugiat quod hic corporis harum aut, nisi eaque tempora facere explicabo voluptatum?
+    </p>
+   </div><br>
+</body>
+</html>
