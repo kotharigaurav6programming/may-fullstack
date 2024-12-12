@@ -1,0 +1,20 @@
+<p id="show"></p>
+<script>
+    var objArray = [
+        {name : "Andrew Anderson",state:"MP",pincode:456789,age:34,salary:45678,address:"Indore"},
+        {name : "Peter Parker",state:"MP",pincode:456789,age:98,salary:87654,address:"Bhopal"}    
+    ];
+
+    var table = "<table border='1' cellpadding='8' cellspacing='0'><tr><th>Name</th><th>State</th><th>Pincode</th><th>Age</th><th>Salary</th><th>Address</th></tr>";
+
+    for(var index in objArray){
+        table += '<tr>';        
+        for(var key in objArray[index]){
+            table += "<td>"+objArray[index][key]+"</td>";
+        }        
+        table += '</tr>';
+    }
+    table += '</table>';
+
+    document.getElementById("show").innerHTML = table;
+</script>

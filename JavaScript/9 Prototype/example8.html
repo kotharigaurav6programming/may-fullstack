@@ -1,0 +1,25 @@
+<script>
+    var name = prompt("Enter username");
+    var age = parseInt(prompt("Enter age"));
+    var salary = parseInt(prompt("Enter salary"));
+    var address = prompt("Enter address");
+    
+    function Employee(){
+        this.setData = function(name,age,salary){
+            this.name = name;
+            this.age = age;
+            this.salary = salary;   
+        }
+        this.displayData = function(){
+            document.write("<br>Name : "+this.name);
+            document.write("<br>Age : "+this.age);
+            document.write("<br>Salary : "+this.salary);
+            document.write("<br>Address : "+this.address); 
+        }
+    }
+    Employee.prototype.address = address;
+    
+    var empObj = new Employee();
+    empObj.setData(name,age,salary);
+    empObj.displayData();
+</script>

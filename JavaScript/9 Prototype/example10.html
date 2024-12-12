@@ -1,0 +1,22 @@
+<script>
+    var num1 = parseInt(prompt("Enter first number"));
+    var num2 = parseInt(prompt("Enter second number"));
+   // alert(num1+num2);
+    function Operation(){
+        this.setData = function(num1,num2){
+            this.num1 = num1;
+            this.num2 = num2;
+        }
+        this.displayData = function(){
+            document.write("<br>Value of num1 : "+this.num1);
+            document.write("<br>Value of num2 : "+this.num2);
+        }
+        this.addData = function(){
+            return num1+num2;
+        }
+    }
+    var obj = new Operation();
+    obj.setData(num1,num2);
+    obj.displayData();
+    document.write("<br>Addition : "+obj.addData());
+</script>

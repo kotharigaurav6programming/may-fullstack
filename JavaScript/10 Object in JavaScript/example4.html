@@ -1,0 +1,22 @@
+<script>
+ 
+     var obj = {
+        "full name" : "Andrew Anderson",
+        age : 67,
+        for : 78.23,
+        let : "Bhopal",
+        return : true,
+        0 : 'a'
+     }; 
+   
+     document.write("age in obj : "+("age" in obj));
+
+    //  for(var key in obj){
+    //     document.write("<br><br>key : "+key+" typeof key : "+typeof key+" and its value : "+obj[key]+" and its value type : "+typeof obj[key]);
+    //  }
+
+    for(var key in obj){
+        document.write(`<br><br>key : ${key} typeof key : ${typeof key} and its value : ${obj[key]} and its value type : ${typeof obj[key]}`);
+     }
+
+</script>

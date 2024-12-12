@@ -1,0 +1,19 @@
+<script>
+    // var obj = {}; // By Object Literal
+    var obj = new Object(); // By Object Constructor (By new Keyword)
+    
+    document.write("<br>obj : "+obj);
+    document.write("<br>typeof obj : "+typeof obj);
+
+    obj.fname = "Andrew";
+    obj.lname = "Anderson";
+    obj.age = 45;
+     delete obj.age;
+
+    document.write("<br>First name : "+obj.fname);
+    document.write("<br>Last name : "+obj.lname);
+    document.write("<br>Full name : "+obj.fname+" "+obj.lname);
+    document.write(`<br>Full name : ${obj.fname} ${obj.lname}`);
+    document.write("<br>Age : "+obj.age);
+    obj.age ? document.write("<br>Age : "+obj.age) : '';  
+</script>

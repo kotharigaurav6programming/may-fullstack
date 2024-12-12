@@ -1,0 +1,22 @@
+<script>
+    var obj1 = {name : "Andrew Anderson"};
+    var obj2 = {name : "Peter Parker"};
+     
+    var objArray = [obj1,obj2];
+
+    document.write("<br>obj1.name : "+obj1.name);
+    document.write("<br>obj2.name : "+obj2.name);
+    
+    document.write("<br><br>objArray[0].name : "+objArray[0].name);
+    document.write("<br>objArray[1].name : "+objArray[1].name+"<br>");
+
+    for(var index in objArray){
+        document.write("<br>"+objArray[index].name);
+    }
+
+    document.write("<br>");
+    for(var obj of objArray){
+        document.write("<br>"+obj.name);
+    }
+
+</script>

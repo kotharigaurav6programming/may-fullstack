@@ -1,0 +1,58 @@
+Object In JavScript
+-------------------
+There are two ways to define object in javascript.
+1. By Object Literal
+2. By new Keyword or Object function or Object Constructor
+
+1. By Object Literal
+syntax : var obj = {};
+         typeof obj => object 
+         var obj = {
+            name : "Andrew Anderson",
+            age : 56
+         }
+
+         obj.address = "Indore"
+         delete obj.age;
+
+2. By new Keyword or Object function or Object Constructor
+syntax : var obj = new Object();
+         typeof obj => object   
+         obj.name = "Andrew Anderson"
+         obj.age = 56
+         obj.address = "Indore"
+--------------------------
+keypoints : 
+1)
+var obj = {
+    name : "Andrew anderson",
+    age : 45
+}
+
+typeof obj = object 
+typeof <key> = string 
+  |-- typeof name = string 
+  |-- typeof age = string
+typeof <value> = vary according to data
+  |-- typeof "anderw anderson" = string 
+  |-- typeof 45 = number 
+
+2) 
+you can also use keywords as key names in object
+var obj = {
+    for : "Mike",
+    while : 678,
+    return : true,
+    0 : 123
+} 
+
+3) 
+var obj = {
+   "full name" : "andrew anderson",
+    age : 67
+}
+
+obj."full name"  incorrect
+obj["full name"] correct
+obj["0"] correct 
+obj[0] correct

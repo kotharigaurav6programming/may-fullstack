@@ -1,0 +1,18 @@
+<script>
+   /* 
+    function addition(){
+        console.log(this);
+    }
+    var res = addition();
+    document.write("Result : "+res);
+    */
+
+    
+    function Addition(){
+        console.log(this);
+    }
+    var res = new Addition();
+    console.log(res); 
+    document.write("Result : "+res.constructor.name);
+    
+</script>

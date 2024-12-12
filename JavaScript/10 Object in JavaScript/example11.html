@@ -1,0 +1,50 @@
+<button onclick="showData()">Show Data</button>
+<p id="show"></p>
+<script>
+    function showData(){
+    var objArray = [
+        {
+            name : "Andrew Anderson",
+            pincode:456789,
+            age:34,
+            salary:45678,
+            address:{
+                state:"MP",
+                city : "Indore"
+            }
+        },
+        {
+            name : "Peter Parker",
+            pincode:456789,
+            age:98,
+            salary:87654,
+            address:{
+                state:"MP",
+                city:"Bhopal"
+            }
+        }    
+    ];
+    var table = "<table border='1' cellpadding='8' cellspacing='0'><tr><th>Name</th><th>Pincode</th><th>Age</th><th>Salary</th><th>State</th><th>City</th></tr>";
+    for(var index in objArray){
+        table += '<tr>';        
+        for(var key in objArray[index]){
+            if(typeof objArray[index][key] == "object"){
+                for(var innerkey in objArray[index][key]){
+                    if(typeof objArray[index][key][innerkey] == "object"){
+
+                    }else{
+                        table += "<td>"+objArray[index][key][innerkey]+"</td>";
+                    }
+                }
+            }else{
+                table += "<td>"+objArray[index][key]+"</td>";
+            }
+        }        
+        table += '</tr>';
+    }
+    table += '</table>';
+
+    document.getElementById("show").innerHTML = table;
+
+    }
+</script>

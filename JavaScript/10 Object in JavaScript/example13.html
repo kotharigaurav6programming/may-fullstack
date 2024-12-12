@@ -1,0 +1,42 @@
+<!-- Example showing the concept of JSON -->
+<script>
+    // js object 
+    var jsObject = {
+        name:"Andrew anderson",
+        age : 56,
+        address : "Indore"
+    }
+    document.write("<br>typeof jsObject : "+typeof jsObject);
+    document.write("<br>name : "+jsObject.name);
+    document.write("<br>age : "+jsObject.age);
+    document.write("<br>address : "+jsObject.address);
+
+    // json object 
+    var jsonObject = {
+        "name":"Andrew anderson",
+        "age" : 56,
+        "address" : "Indore"
+    }
+    document.write("<br><br>typeof jsonObject : "+typeof jsonObject);
+    document.write("<br>name : "+jsonObject.name);
+    document.write("<br>age : "+jsonObject.age);
+    document.write("<br>address : "+jsonObject.address);
+
+    // json string 
+    var jsonString = `{
+        "name":"Andrew anderson",
+        "age" : 56,
+        "address" : "Indore"
+    }`
+    document.write("<br><br>typeof jsonString : "+typeof jsonString);
+    document.write("<br>name : "+jsonString.name);
+
+    var objJS = JSON.parse(jsonString);
+    document.write("<br><br>typeof objJS : "+typeof objJS);
+    document.write("<br>name : "+objJS.name);
+
+    var stringJSON = JSON.stringify(jsObject);
+    document.write("<br><br>typeof stringJSON : "+typeof stringJSON);
+    document.write("<br>json string : "+stringJSON);
+
+</script>

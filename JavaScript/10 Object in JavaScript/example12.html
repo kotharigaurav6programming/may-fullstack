@@ -1,0 +1,96 @@
+<button onclick="showData()">Show Data</button>
+<p id="show"></p>
+<script>
+    function showData(){
+    var objArray = [
+        {
+            name : "Andrew Anderson",
+            pincode:456789,
+            age:34,
+            salary:45678,
+            address:{
+                country:{
+                    state:"MP",
+                    city : {
+                        cityName : "Indore",
+                        colony : {
+                            colonyName : "SevaSardar",
+                            apartment : {
+                                apartmentName : "Sneha Residency",
+                                FloorNo : 420
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name : "Peter Parker",
+            pincode:456789,
+            age:98,
+            salary:87654,
+            address:{
+                country:{
+                    state:"MP",
+                    city : {
+                        cityName : "Indore",
+                        colony : {
+                            colonyName : "SevaSardar",
+                            apartment : {
+                                apartmentName : "Sneha Residency",
+                                FloorNo : 420
+                            }
+                        }
+                    }
+                }
+            }
+        }    
+    ];
+    var table = "<table border='1' cellpadding='8' cellspacing='0'><tr><th>Name</th><th>Pincode</th><th>Age</th><th>Salary</th><th>State</th><th>CityName</th><th>ColonyName</th><th>ApartmentName</th><th>FloorNo.</th></tr>";
+    for(var index in objArray){
+        table += '<tr>';        
+        for(var key in objArray[index]){
+            if(typeof objArray[index][key] == "object"){
+                for(var innerkey in objArray[index][key]){
+                    if(typeof objArray[index][key][innerkey] == "object"){
+                        for(var subkey in objArray[index][key][innerkey]){
+                            if(typeof objArray[index][key][innerkey][subkey] == "object"){
+                                for(var subinnerkey in objArray[index][key][innerkey][subkey]){
+                                    if(typeof objArray[index][key][innerkey][subkey][subinnerkey]=="object"){
+                                        for(var innersubkey in objArray[index][key][innerkey][subkey][subinnerkey]){
+                                            if(typeof objArray[index][key][innerkey][subkey][subinnerkey][innersubkey]=="object"){
+                                                for(var innerinnerkey in objArray[index][key][innerkey][subkey][subinnerkey][innersubkey]){
+                                                    if(typeof objArray[index][key][innerkey][subkey][subinnerkey][innersubkey][innerinnerkey] == "object"){
+
+                                                    }else{
+                                                        table += "<td>"+objArray[index][key][innerkey][subkey][subinnerkey][innersubkey][innerinnerkey]+"</td>";
+                                                    }
+                                                }
+                                            }else{
+                                                table += "<td>"+objArray[index][key][innerkey][subkey][subinnerkey][innersubkey]+"</td>";
+                                            }
+                                        }
+                                    }else{
+                                        table += "<td>"+objArray[index][key][innerkey][subkey][subinnerkey]+"</td>";
+                                    }
+                                }
+                            }else{
+                                table += "<td>"+objArray[index][key][innerkey][subkey]+"</td>";
+                            }
+                        }
+                    }else{
+                        table += "<td>"+objArray[index][key][innerkey]+"</td>";
+                    }
+                }
+            }else{
+                table += "<td>"+objArray[index][key]+"</td>";
+            }
+        }        
+        table += '</tr>';
+    }
+    table += '</table>';
+
+    document.getElementById("show").innerHTML = table;
+
+    }
+</script>

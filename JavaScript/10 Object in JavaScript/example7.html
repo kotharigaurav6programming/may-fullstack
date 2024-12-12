@@ -1,0 +1,14 @@
+<script>
+    var objArray = [
+        {name : "Andrew Anderson",state:"MP",pincode:456789,age:34,salary:45678,address:"Indore"},
+        {name : "Peter Parker",state:"MP",pincode:456789,age:98,salary:87654,address:"Bhopal"}    
+    ];
+    
+    for(var index in objArray){
+        for(var key in objArray[index]){
+            document.write("<br>"+key+" : "+objArray[index][key]);
+        }        
+        document.write("<br>");
+    }
+ 
+</script>
