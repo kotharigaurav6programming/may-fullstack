@@ -1,0 +1,29 @@
+<button onclick="showData()">Show Data</button>
+<p id="show"></p>
+<script>
+    function showData(){
+    var xhttp = new XMLHttpRequest();
+    var obj =  {
+        "postId": 1,
+        "id": 2,
+        "name": "quo vero reiciendis velit similique earum",
+        "email": "Jayne_Kuhic@sydney.com",
+        "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et"
+    }
+    var method = 'POST';
+    var url = "https://jsonplaceholder.typicode.com/comments";
+    var async = true;   
+    xhttp.open(method,url,async);    
+    xhttp.setRequestHeader("Content-Type","Application/json");
+    xhttp.send(JSON.stringify(obj));
+
+    xhttp.onreadystatechange = function(){
+        console.log(xhttp.readyState);
+        
+        if(xhttp.readyState==4 && xhttp.status==201){
+            var message = "Object is going to be add";
+            document.getElementById("show").innerHTML = message;
+        }
+    }    
+}
+</script>

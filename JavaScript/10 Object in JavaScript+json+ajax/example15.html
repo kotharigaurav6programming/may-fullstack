@@ -1,0 +1,28 @@
+<button onclick="showData()">Show Data</button>
+<p id="show"></p>
+<script>
+    function showData(){
+    var xhttp = new XMLHttpRequest();    
+    var method = 'GET';
+    var url = "https://jsonplaceholder.typicode.com/comments";
+    var async = true;   
+    xhttp.open(method,url,async);    
+    xhttp.send();
+    xhttp.onreadystatechange = function(){
+        if(xhttp.readyState==4 && xhttp.status==200){
+            console.log(typeof xhttp.responseText);
+            var objArray = JSON.parse(xhttp.responseText);
+            var table = "<table border='1' cellpadding='8' cellspacing='0'><tr><th>PostId</th><th>Id</th><th>Name</th><th>Email</th><th>Body</th></tr>";
+                for(var index in objArray){
+                    table += '<tr>';        
+                    for(var key in objArray[index]){
+                        table += "<td>"+objArray[index][key]+"</td>";
+                    }        
+                    table += '</tr>';
+                }
+                table += '</table>';
+                document.getElementById("show").innerHTML = table;
+        }
+    }    
+}
+</script>
