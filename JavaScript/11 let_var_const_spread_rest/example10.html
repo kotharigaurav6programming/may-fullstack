@@ -1,0 +1,19 @@
+<!-- Example showing the concept of spread operator -->
+<script>
+    var obj1 = {
+        "full name":"Andrew Anderson",
+        age:56
+    }
+    var obj2 = {
+        salary:1234,
+        address : "Indore"
+    }
+    var obj3 = {...obj1,...obj2};
+    obj3.pincode = 432345;
+
+    document.write("Full Name : "+obj3["full name"]);
+    document.write("<br>Age : "+obj3.age);    
+    document.write("<br>Salary : "+obj3.salary);
+    document.write("<br>Address : "+obj3.address); 
+    document.write("<br>Pincode : "+obj3.pincode);
+</script>
