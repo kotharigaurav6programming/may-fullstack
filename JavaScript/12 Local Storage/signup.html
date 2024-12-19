@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/scripts.js"></script>
 </head>
 <body>
     <center>
@@ -12,17 +13,28 @@
     </center>
     <hr>
         <a href="index.html">Home</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-        <a href="signup.html">SignUp</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-        <a href="signin.html">SignIn</a>
+        <a href="signup.html" onclick="myfun()">SignUp</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <a href="signin.html" onclick="myfun()">SignIn</a>
     <hr>
     <h2>SignUp | LocalStorage Example</h2>
-    <form action="">
+    <span style="color:red" id="show"></span>
+    <form action="signin.html" onsubmit="return getData()">
         <input type="text" placeholder="Enter Username" id="username" name="username"> <br>
         <input type="email" placeholder="Enter Email" id="email" name="email"> <br>
         <input type="password" placeholder="Enter Password" id="password" name="password"> <br>
         <input type="address" placeholder="Enter Address" id="address" name="address"> <br>
+        <!-- <input type="submit" value="Submit" onclick="getData()"> <br> -->
         <input type="submit" value="Submit"> <br>
         <input type="reset" value="Reset"> <br>
     </form>
+    <script>
+        var message = localStorage.getItem("regMessage");
+        console.log("------------",message);
+        document.getElementById("show").innerHTML = message!="null" ? message : '';
+
+        function myfun(){
+            localStorage.setItem("regMessage",JSON.stringify(null));
+        }
+    </script>
 </body>
 </html>
