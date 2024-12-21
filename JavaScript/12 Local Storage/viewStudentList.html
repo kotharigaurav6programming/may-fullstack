@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/scripts.js"></script>
+</head>
+<body>
+    <center>
+        <h2>CRUD Operation By Local Storage</h2>
+    </center>
+    <hr>
+        <a href="profile.html">Home</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <a href="viewStudentList.html">View Students List</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <a href="">Logout</a>
+    <hr>
+    <h2>StudentList | <span id="show"></span></h2>
+        <span id="showTableRows"></span>
+   <script>
+        var email = localStorage.getItem("activeEmail");
+        console.log("------------",email);
+        document.getElementById("show").innerHTML = email;
+        //-----------------------------------------------------    
+        var existingData = JSON.parse(localStorage.getItem("data"));
+        var table = `<table border="1" cellpadding="10" cellspacing="0" align="center">
+        <tr>
+            <th>S.No</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th colspan='2'>Action</th>
+        </tr>`;
+       // for(var obj of existingData){
+        existingData.forEach((obj,index)=>{
+            table += `<tr>
+                        <td>${index+1}</td> 
+                        <td>${obj.username}</td> 
+                        <td>${obj.email}</td> 
+                        <td>${obj.address}</td>
+                        <td><form action='updateForm.html'>
+                                <button onclick='${updateStudent(index)}'>Update</button>
+                            </form></td>
+                        <td><button>Delete</button></td> 
+                    </tr>`
+        })
+        table+='</table>';
+        document.getElementById("showTableRows").innerHTML=table;
+    </script>
+</body>
+</html>

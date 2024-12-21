@@ -49,3 +49,23 @@ function getData(){
     else
         return false;        
 }
+
+function checkLogin(){
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var existingData = JSON.parse(localStorage.getItem("data"));
+    let res = existingData.find((obj)=>{
+        return obj.email==email && obj.password==password;
+    });
+    if(res){
+        localStorage.setItem("activeEmail",email);
+        return true;
+    }else{
+        localStorage.setItem("regMessage","Email Id or password is wrong");
+        return false;
+    }
+}
+
+function updateStudent(index){
+    localStorage.setItem("updateIndex",JSON.stringify(index));
+}

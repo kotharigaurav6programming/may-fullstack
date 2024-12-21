@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/scripts.js"></script>
 </head>
 <body>
     <center>
@@ -17,7 +18,7 @@
     <hr>
     <h2>SignIn | LocalStorage Example</h2>
     <span style="color:red" id="show"></span>
-    <form action="">
+    <form action="profile.html" onsubmit="return checkLogin()">
         <input type="email" placeholder="Enter Email" id="email" name="email"> <br>
         <input type="password" placeholder="Enter Password" id="password" name="password"> <br>
         <input type="submit" value="Submit"> <br>
