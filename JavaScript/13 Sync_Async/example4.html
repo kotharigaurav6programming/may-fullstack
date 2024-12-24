@@ -1,0 +1,18 @@
+<!-- example showing the concept of Asynchronous -->
+<script>
+    function myFun1(){
+        console.log("statement 11");
+    }
+    function myFun2(){
+        console.log("statement 22");
+    }
+    function myFun3(){
+        console.log("statement 33");
+    }
+    myFun1();
+    setTimeout(()=>{
+        myFun2();
+    },4000);
+    myFun3();
+    
+</script>

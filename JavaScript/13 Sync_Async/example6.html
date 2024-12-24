@@ -1,0 +1,17 @@
+<!-- example showing the concept of Asynchronous -->
+<script>
+    function myFun1(){
+        console.log("statement 11");
+    }
+    function myFun2(name){
+        console.log("statement 22 : ",name);
+    }
+    function myFun3(){
+        console.log("statement 33");
+    }
+    myFun1();
+    var x = setTimeout(myFun2,4000,"Andrew Anderson");
+    var y = setInterval(myFun3,1000);
+    clearInterval(y);
+    clearTimeout(x);
+</script>

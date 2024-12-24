@@ -69,3 +69,24 @@ function checkLogin(){
 function updateStudent(index){
     localStorage.setItem("updateIndex",JSON.stringify(index));
 }
+
+function updateFormData(){
+    var username = document.getElementById("username").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var address = document.getElementById("address").value;
+
+    var obj = {username,email,password,address};
+    var index = JSON.parse(localStorage.getItem("updateIndex"));
+    var existingData = JSON.parse(localStorage.getItem("data"));
+    existingData.splice(index,1,obj);
+    localStorage.setItem("data",JSON.stringify(existingData));
+    alert("data updated successfully");
+}
+
+function deleteStudent(index){
+    var existingData = JSON.parse(localStorage.getItem("data"));
+    existingData.splice(index,1);
+    localStorage.setItem("data",JSON.stringify(existingData));
+    alert("data deleted successfully");
+}

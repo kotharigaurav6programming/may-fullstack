@@ -32,18 +32,27 @@
             <th colspan='2'>Action</th>
         </tr>`;
        // for(var obj of existingData){
+       
         existingData.forEach((obj,index)=>{
-            table += `<tr>
-                        <td>${index+1}</td> 
-                        <td>${obj.username}</td> 
-                        <td>${obj.email}</td> 
-                        <td>${obj.address}</td>
-                        <td><form action='updateForm.html'>
-                                <button onclick='${updateStudent(index)}'>Update</button>
-                            </form></td>
-                        <td><button>Delete</button></td> 
-                    </tr>`
-        })
+             table += `<tr>
+                         <td>${index+1}</td> 
+                         <td>${obj.username}</td> 
+                         <td>${obj.email}</td> 
+                         <td>${obj.address}</td>
+                         <td><form action='updateForm.html'>
+                                 <button onclick='updateStudent(${index})'>Update</button>
+                             </form></td>
+                         <td><form action='viewStudentList.html'>
+                            <button onclick='deleteStudent(${index})'>Delete</button>
+                            </form></td> 
+                     </tr>`
+         })
+
+//-----------------------------
+// for(let i=0;i<existingData.length;i++){
+//         table+="<tr><td>"+(i+1)+"</td><td>"+existingData[i].username+"</td><td>"+existingData[i].email+"</td><td>"+existingData[i].address+"</td><td><form action='updateForm.html'><button onclick='updateStudent("+i+")'>Update</button></form></td><td><button onclick='deleteIndex("+i+")'>Delete</button></td></tr>";
+//     }
+//-----------------------------
         table+='</table>';
         document.getElementById("showTableRows").innerHTML=table;
     </script>
