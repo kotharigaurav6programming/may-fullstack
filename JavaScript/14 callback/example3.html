@@ -1,0 +1,19 @@
+<!-- Example showing the concept of callback | Asynchronous callback-->
+ <script>
+    var funAsArgument1 = ()=>{
+        document.write("<br>This is an example statement1...");
+    };
+
+    var funAsArgument2 = ()=>{
+        document.write("<br>This is an example statement2");
+    };
+
+    function myFun(callback1,callback2){ // here myFun is higher order function
+        document.write("<br>---------------statement 1");
+        setTimeout(funAsArgument1);
+        document.write("<br>---------------statement 2");
+        callback2();
+    }
+
+    myFun(funAsArgument1,funAsArgument2); 
+ </script>

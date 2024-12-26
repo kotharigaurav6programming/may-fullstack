@@ -1,0 +1,30 @@
+<!-- Example showing the concept of callback -->
+ <script>
+    /*
+    var a = 100;
+    function myFun(value){
+        document.write("value : "+value);
+        document.write("<br>typeof value : "+typeof value);
+    }
+    myFun(a);
+    */
+
+    /*
+        If any function receives function in its parameter or if we pass a function as a argument in any specific function or if a function returns any function then that function is known as HIGHER ORDER FUNCTION
+    */
+   /*
+    If you pass any function as an argument then that function is known as callback
+   */
+    var funAsArgument = function add(){
+        document.write("<br>This is an example statement");
+    };
+
+    function myFun(callback){ // here myFun is higher order function
+        document.write("value : "+callback);
+        document.write("<br>typeof value : "+typeof callback);
+        callback();
+    }
+
+    myFun(funAsArgument); // here funAsArgument is callback
+    
+ </script>

@@ -1,0 +1,21 @@
+<!-- Example showing the concept of callback-->
+<script>
+    var a = parseInt(prompt("Enter Value of a"));
+    var b = parseInt(prompt("Enter value of b"));
+    
+    var resultFunction = (result)=>{
+        document.write("Result : "+result);
+    }
+    
+    function addition(a,b,callback){
+        var sum = a+b;
+        callback(sum);
+    }
+    addition(a,b,resultFunction);
+</script>
+
+<!-- callback = (result)=>{
+    document.write("Result : "+result);
+}
+
+callback(34); -->

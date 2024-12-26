@@ -1,0 +1,16 @@
+<!-- Example showing the concept of callback-->
+<script>
+    function myFun(callback){
+        var msg = "This is an example";
+        callback(msg);
+    }
+    myFun((msg)=>{
+        document.write(msg);
+    });
+</script>
+
+<!-- callback = (msg)=>{
+    document.write(msg);
+}
+
+callback("This is an example"); -->
