@@ -1,0 +1,11 @@
+<!-- Exxample showing the conceot of Promise -->
+ <script>
+    new Promise((resolve,reject)=>{
+        // resolve("Example of resolve Promise");
+        reject("Example of reject Promise");
+    }).then((resolveMsg)=>{
+        console.log("resolveMessage : ",resolveMsg);
+    },(rejectMsg)=>{
+        console.log("rejectMessage : ",rejectMsg);
+    });
+ </script>

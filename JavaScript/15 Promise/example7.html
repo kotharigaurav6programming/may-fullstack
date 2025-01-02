@@ -1,0 +1,16 @@
+<!-- Exxample showing the concept of Promise -->
+ <script>
+    var num = parseInt(prompt("Enter Number"));
+    function passNumber(num){
+        return new Promise((resolve,reject)=>{
+            resolve(num*num);
+        });
+    }
+    var res = passNumber(num).then((value)=>{
+        return value*value;
+    });
+
+    res.then((result)=>{
+        console.log("Result : ",result);
+    });    
+</script>

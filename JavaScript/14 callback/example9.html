@@ -1,0 +1,37 @@
+<!-- example showing the concept of callback -->
+<script>
+    var a = parseInt(prompt("Enter first Number"));
+    var b = parseInt(prompt("Enter second Number"));
+    
+    function addition(a,b,callback){
+        document.write("<br>Addition : "+(a+b));
+        callback(false);
+    }
+    function subtraction(a,b,callback){
+        document.write("<br>Subtraction : "+(a-b));
+        callback(false);
+    }
+    function multiplication(a,b,callback){
+        document.write("<br>Multiplication : "+(a*b));
+        callback(false);
+    }
+    function division(a,b,callback){
+        document.write("<br>Division : "+(a/b));
+        callback("End of program");
+    }
+    addition(a,b,(value)=>{
+        if(!value){
+            subtraction(a,b,(value)=>{
+                if(!value){
+                    multiplication(a,b,(value)=>{
+                        if(!value){
+                            division(a,b,(value)=>{
+                                document.write("<br>"+value);
+                            });
+                        }
+                    });
+                }
+            });
+        }
+    });
+</script>

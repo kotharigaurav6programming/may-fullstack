@@ -1,0 +1,17 @@
+<!-- example showing the concept of callback -->
+<script>
+    var num=10;
+    function myfun(num,callback){
+        document.write("<br>"+num);
+        callback(num+2,(num,callback)=>{
+            document.write("<br>"+num);
+            callback();
+        });
+    }
+    myfun(num,(num,callback)=>{
+        document.write("<br>"+num);
+        callback(num+2,()=>{
+            document.write("<br>End of Program");
+        });
+    });
+</script>

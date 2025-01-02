@@ -1,0 +1,25 @@
+<!-- Example showing the concept of Promise -->
+<script>
+
+    function performOperation(num){
+        return new Promise((resolve,reject)=>{
+            resolve(num+2);
+        });
+    }
+    performOperation(10).then((msg)=>{
+        console.log(msg);
+        performOperation(msg).then((msg)=>{
+                console.log(msg);
+                performOperation(msg).then((msg)=>{
+                        console.log(msg);
+                    }).catch((error)=>{
+                        console.log(error);
+                    });
+            }).catch((error)=>{
+                console.log(error);
+            });
+    }).catch((msg)=>{
+        console.log(msg);
+    });
+
+</script>
