@@ -1,0 +1,45 @@
+<!-- Example showing the concept of Promise -->
+<script>
+    var num1 = parseInt(prompt("Enter First Number"));
+    var num2 = parseInt(prompt("Enter Second Number"));
+    
+    function addition(a,b){
+        return new Promise((resolve,reject)=>{
+            console.log("Addition : ",(a+b));
+            resolve(true);
+        });
+    }
+    function subtraction(a,b){
+        return new Promise((resolve,reject)=>{
+            console.log("Subtraction : ",(a-b));
+            resolve(true);
+        });
+    }
+    function multiplication(a,b){
+        return new Promise((resolve,reject)=>{
+            console.log("Multiplication : ",(a*b));
+            resolve(true);
+        });
+    }
+
+    var x = addition(num1,num2);
+    x.then((status)=>{
+        if(status){
+            subtraction(num1,num2).then((status)=>{
+                if(status){
+                    multiplication(num1,num2).then((status)=>{
+                        if(status){
+                            console.log("End of Program");
+                        }
+                    }).catch((error)=>{
+                        console.log("Error : ",error);
+                    }); 
+                }
+            }).catch((error)=>{
+                console.log("Error : ",error);
+            });
+        }
+    }).catch((error)=>{
+        console.log("Error : ",error);
+    });
+</script>

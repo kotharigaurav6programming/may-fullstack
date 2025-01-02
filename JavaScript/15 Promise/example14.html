@@ -1,0 +1,23 @@
+<!-- Example showing the concept of Promise -->
+<script>
+    /*
+    var value = Promise.resolve(100);
+    // console.log(value);
+    value.then((result)=>{
+        console.log(result+5);
+        console.log(result*5);
+        console.log(result-5);
+    }).catch((error)=>{
+        console.log("Error : ",error);
+    });
+    */
+
+    var value = Promise.reject(100);
+    value.then((result)=>{
+        console.log(result+5);
+        console.log(result*5);
+        console.log(result-5);
+    }).catch((error)=>{
+        console.log("Error : ",error);
+    });
+</script>

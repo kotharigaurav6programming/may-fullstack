@@ -1,0 +1,28 @@
+<!-- Example showing the concept of Promise -->
+<script>
+    function gotoroom(){
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve("gotoroom");
+            },2000);
+            //reject("reject gotoroom");
+        });
+    }
+    function removegarbage(){
+        return new Promise((resolve,reject)=>{
+            resolve("removegarbage");
+            //reject("reject removegarbage");
+        });
+    }
+    function wonprize(){
+        return new Promise((resolve,reject)=>{
+            //resolve("wonprize");
+            reject("reject wonprize");
+        });
+    }
+    Promise.any([gotoroom(),removegarbage(),wonprize()]).then((msg)=>{
+        console.log(msg);
+    }).catch((error)=>{
+        console.log("Error : ",error);
+    });
+</script>
