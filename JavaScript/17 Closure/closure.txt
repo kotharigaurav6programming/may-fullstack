@@ -1,0 +1,28 @@
+is closure means inner function in javascript ?
+
+In JavaScript, a closure does not necessarily mean an inner function, but an inner function is a common example of a closure.
+
+A closure is a fundamental concept in JavaScript where a function retains access to its outer (enclosing) function's variables even after the outer function has finished executing. In simpler terms, a closure "closes over" the variables of the outer function, allowing the inner function to still access and use those variables.
+
+Here's an example of a closure using an inner function:
+
+```javascript
+function outerFunction() {
+  let outerVariable = 'I am from the outer function';
+
+  function innerFunction() {
+    console.log(outerVariable); // Accessing the outerVariable from the enclosing (outer) function
+  }
+
+  return innerFunction; // Returning the inner function, which is now a closure
+}
+
+const closureExample = outerFunction();
+closureExample(); // This will print: "I am from the outer function"
+```
+
+In the above example, `innerFunction` is a closure because it retains access to the `outerVariable`, even after `outerFunction` has finished executing. When we call `closureExample()`, it can still access and use `outerVariable`.
+
+Closures are useful for creating private variables in JavaScript, implementing modules, and managing state in certain design patterns.
+
+Though inner functions are a common way to create closures, it's essential to note that closures can also be created using other techniques, such as returning objects with methods that access their outer function's variables or using functions that return other functions.

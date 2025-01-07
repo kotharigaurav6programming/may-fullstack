@@ -1,0 +1,11 @@
+<!-- Example showing the concept of curring -->
+<script>       
+        function myFun(name){
+            return (email)=>{
+                return (yob)=>{
+                    return `Hello ${name}, your email id is ${email} and you are ${new Date().getFullYear()-yob} years old`;
+                }
+            }
+        }
+        document.write(myFun('Andrew Anderson')('andrew@gmail.com')(1962));
+</script>

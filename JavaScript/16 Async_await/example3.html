@@ -1,0 +1,24 @@
+<!-- Example showing the concept of Async_Await -->
+ <script>
+    var num=19;
+    function funOne(){
+        return new Promise((resolve,reject)=>{
+            resolve(num);
+        });
+    }
+    function funTwo(num){
+        return new Promise((resolve,reject)=>{
+            resolve(num*num);
+        });
+    }
+    async function myResult(){
+        try{
+            var res = await funOne();
+            var res1 = await funTwo(res);
+            console.log("Result : ",res1);
+        }catch(error){
+            console.log(error);
+        }
+    }
+    myResult();
+</script>

@@ -1,0 +1,33 @@
+how we can say curring is higher order function in javascript ?
+
+In JavaScript, currying is also considered a higher-order function for the same reasons I mentioned earlier. Let's see how currying can be implemented in JavaScript and why it qualifies as a higher-order function.
+
+Here's an example of a curried function in JavaScript:
+
+```javascript
+// Regular function that takes two arguments and returns their sum
+function add(x, y) {
+  return x + y;
+}
+
+// Curried version of the add function
+function curriedAdd(x) {
+  return function(y) {
+    return x + y;
+  };
+}
+```
+
+In this example, `curriedAdd` is a higher-order function because it takes one argument (`x`) and returns another function that takes another argument (`y`) and performs the actual addition.
+
+Usage of curried `add` function:
+
+```javascript
+add(2, 3); // Returns 5
+
+curriedAdd(2)(3); // Returns 5
+```
+
+The concept of higher-order functions remains consistent in JavaScript. A higher-order function can take other functions as arguments and/or return a function as its result. In the case of currying, the curried function takes arguments one at a time and returns functions as intermediate steps, making it a higher-order function.
+
+To summarize, currying in JavaScript is considered a higher-order function because it involves transforming a function into a series of functions, each taking a single argument, and it adheres to the characteristics of higher-order functions by either accepting or returning functions as values.

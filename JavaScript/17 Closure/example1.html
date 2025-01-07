@@ -1,0 +1,64 @@
+<!-- Example showing the concept of Closure -->
+<script>
+/*
+    function outerFunction(){
+        function innerFunction(){
+            document.write("This is an example of closure");
+        }
+        innerFunction();
+    }
+    outerFunction();
+*/
+/*
+    function outerFunction(){
+        function innerFunction(){
+            document.write("This is an example of closure");
+        }
+        return innerFunction;
+    }
+    var myFun = outerFunction();
+    myFun();
+*/
+/*
+    function outerFunction(){
+        return ()=>{
+            document.write("This is an example of closure");
+        }
+    }
+    var myFun = outerFunction();
+    myFun();
+*/
+/*
+    function outerFunction(){
+        var name = "Andrew Anderson";
+        function innerFunction(){
+            document.write("This is an example of closure | name : "+name);
+        }
+        return innerFunction;
+    }
+    var myFun = outerFunction();
+    myFun();
+*/
+/*
+    function outerFunction(){
+        function innerFunction(name){
+            document.write("This is an example of closure | name : "+name);
+        }
+        return innerFunction;
+    }
+    var name = "Andrew Anderson Andy";
+    var myFun = outerFunction();
+    myFun(name);
+*/
+    function outerFunction(num1){
+        function innerFunction(num2){
+            document.write("Result : "+(num1*num2));
+        }
+        return innerFunction;
+    }
+    var num1 = 100;
+    var num2 = 200;
+    var myFun = outerFunction(num1);
+    myFun(num2);
+
+</script>

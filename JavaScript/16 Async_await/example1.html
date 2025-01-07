@@ -1,0 +1,39 @@
+<!-- Example showing the concept of Async_Await -->
+ <script>
+    // function myfun(){
+    //     return 1;
+    // }
+    // console.log(myfun());
+
+    // async function myfun(){
+    //     return 1;
+    // }
+    // console.log(myfun());
+ 
+    // async function myfun(){
+    //     return new Error("Error Occured");
+    // }
+    // console.log(myfun());
+
+    // async function myfun(){
+    //     return 1;
+    // }
+    // myfun().then((result)=>{
+    //     console.log(result);
+    // }).catch((error)=>{
+    //     console.log(error);
+    // });
+
+    async function myfun(){
+        return 1;
+    }
+    x = myfun();
+    console.log(x.toString());
+    
+    x.then((result)=>{
+        console.log(result);
+    }).catch((error)=>{
+        console.log(error);
+    });
+
+ </script>

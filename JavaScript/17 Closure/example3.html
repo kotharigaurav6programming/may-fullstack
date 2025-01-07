@@ -1,0 +1,14 @@
+<!-- Example showing the concept of curring -->
+<script>       
+        var protocol = 'https';
+        var domain = 'www.google.com';
+        var queryString = '?a=100&b=200';
+        function url(protocol){
+            return (domain)=>{
+                return (queryString)=>{
+                    return `${protocol}://${domain}${queryString}`;
+                }
+            }
+        }
+        document.write("URL : "+url(protocol)(domain)(queryString));
+</script>
