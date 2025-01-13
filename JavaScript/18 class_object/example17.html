@@ -1,0 +1,15 @@
+<!-- example showing the concept of inheritance-->
+<script>
+    class ParentClass{
+        constructor(fname){
+            document.write("<br>First Name : "+fname);
+        }
+    }
+    class ChildClass extends ParentClass{
+        constructor(fname,lname){
+            super(fname);
+            document.write("<br>Last name : "+lname);
+        }
+    }
+    new ChildClass("Andrew","Anderson");
+</script>

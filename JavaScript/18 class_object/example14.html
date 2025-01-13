@@ -1,0 +1,13 @@
+<!-- example showing the concept of inheritance-->
+<script>
+    class ParentClass{
+        showMessage(){
+            document.write("this is parent class method example");
+        }
+    }
+    class ChildClass extends ParentClass{
+
+    }
+    const obj = new ChildClass();
+    obj.showMessage();
+</script>

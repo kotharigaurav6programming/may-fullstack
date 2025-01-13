@@ -1,0 +1,22 @@
+<!-- example showing the concept of inheritance-->
+<script>
+    class GrandParentClass{
+        showMessage(){
+            document.write("<br>this is grand parent class method example");
+        }
+    }
+    class ParentClass extends GrandParentClass{
+        showMessage(){
+            super.showMessage();
+            document.write("<br>this is parent class method example");
+        }
+    }
+    class ChildClass extends ParentClass{
+        showMessage(){
+            super.showMessage();
+            document.write("<br>this is child class method example");
+        }
+    }
+    const obj = new ChildClass();
+    obj.showMessage();
+</script>

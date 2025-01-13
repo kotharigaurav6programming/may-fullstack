@@ -1,0 +1,22 @@
+<!-- Example showing the concept of string -->
+
+<script>
+    var str1 = ["Andrew","Anderson","Jackson","Jack"];
+    document.write("<br>str1 : "+str1.join(""));
+    document.write("<br>str1 : "+str1.join(" "));
+    document.write("<br>str1 : "+str1.join(","));
+    document.write("<br>str1 : "+str1.join("----"));
+
+    document.write("<br>str1 : "+str1.reverse());
+    document.write("<br>str1 : "+str1.sort());
+    
+    var str2 = "andrew";
+    str2.concat(" anderson");
+    document.write("<br>str2 : "+str2);
+    document.write("<br>str2 : "+str2.concat(" anderson"));
+    document.write("<br>str2 : "+str2.replace("a","A"));
+    str2 = "                              abc";
+    document.write("<br>str2 : "+str2.length);
+    document.write("<br>str2 : "+str2.trimLeft().length);
+    
+</script>

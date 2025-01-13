@@ -1,0 +1,18 @@
+<!-- example showing the concept of class and object-->
+<script>
+class Demo{
+    #a = 100;
+    #showData(){
+        return this.#a;
+    }
+    getData(){
+        document.write("<br>Value : "+this.#showData()); 
+        return this.#showData();    
+    }
+}
+const obj = new Demo();
+// document.write("Value : "+obj.a);
+// document.write("<br>Value : "+obj.showData());
+document.write("<br>Value : "+obj.getData());
+
+</script>

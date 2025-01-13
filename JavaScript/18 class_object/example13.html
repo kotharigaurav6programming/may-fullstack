@@ -1,0 +1,27 @@
+<!-- example showing the concept of class and object-->
+<script>
+class Demo{
+    #length;
+    #breadth;
+    constructor(length,breadth){
+        this.#length = length;
+        this.#breadth = breadth;
+    }
+    #getArea(){
+        document.write("<br>Area : "+(this.#length*this.#breadth));
+    }
+    #getPerimeter(){
+        document.write("<br>Perimeter : "+2*(this.#length+this.#breadth));
+    }
+    #displayDimension(){
+        document.write("<br>Length : "+this.#length+"<br>Breadth : "+this.#breadth);
+    }
+    accessData(){
+        this.#displayDimension();
+        this.#getPerimeter();
+        this.#getArea();
+    }
+}
+const obj = new Demo(12,23);
+obj.accessData();
+</script>
