@@ -1,0 +1,23 @@
+<!-- Example showing the concept of class and object -->
+<!-- 
+Class : 
+    1. Class is a userdefined blueprint for creating objects
+    2. Class is a logical entity(Don't have physical existence).
+    3. Class is a collection of objects.
+    4. Class comprises of data members and member functions
+    5. Class is represented by class keyword.
+    6. If a object is created by class in any of the specific language, then that language will be considered as class based.
+    Here in javascript, with ES5 standard, it is considered as prototype based.
+    Where as with ES6+ standard it is considered as class based also.
+-->
+<script>
+    class MyClass{
+        getMessage(){
+            document.write("Hello user, This is an example of class in javascript");
+        }
+    }
+    console.log(MyClass.prototype);
+    
+    const obj = new MyClass();
+    obj.getMessage();
+</script>

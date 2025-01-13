@@ -1,0 +1,26 @@
+<!-- example showing the concept of class and object | constructor -->
+<!-- 
+constructor : 
+1. Constructor is a special member function.
+2. Here in javascript constructor is represented by constructor name.
+3. Constructor will be called automatically, when ever the object of a class is created.
+4. Constructor does not return any value not even void.
+5. Initial work of connstructor is to initialize object.
+6. Types of constructor : 
+    i. Default constructor or no-argument constructor
+    ii. parameterized constructor
+-->
+ <script>
+    class Demo{
+        a;
+        b;
+        constructor(){
+            this.a = 123;
+            this.b=345;
+            document.write("<br>"+this.a);
+            document.write("<br>"+this.b);
+        }
+    }
+    const obj = new Demo();
+
+ </script>

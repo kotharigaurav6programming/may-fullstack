@@ -1,0 +1,19 @@
+<!-- example showing the concept of class and object-->
+ <script>
+    class Demo{
+        static count=0;
+        constructor(){
+            ++Demo.count;
+        }
+        static display(){
+            document.write("No. of objects created : "+Demo.count);
+        }
+    }
+    const obj1 = new Demo();
+    const obj2 = new Demo();
+    const obj3 = new Demo();
+    const obj4 = new Demo();
+    const obj5 = new Demo();
+    
+    Demo.display();
+ </script>

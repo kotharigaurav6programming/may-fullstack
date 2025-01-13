@@ -1,0 +1,19 @@
+<!-- example showing the concept of class and object -->
+ <script>
+    class Demo{
+        a = 100;
+        b = 200;
+        display(){
+            document.write("<br>a : "+this.a+"<br>b : "+this.b);
+        }
+    }
+    const obj1 = new Demo();
+    obj1.display();
+    obj1.a+=200;
+    obj1.b+=300;
+    obj1.display();
+    
+    const obj2 = new Demo();
+    obj2.display();
+
+ </script>

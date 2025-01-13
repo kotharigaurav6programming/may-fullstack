@@ -1,0 +1,28 @@
+<!-- Example showing the concept of class and object -->
+<script>
+    var a = 100;
+    var b = 200;
+    class MyClass{
+        add(a,b){
+            document.write("<br>add : "+(a+b));
+        }
+        sub(a,b){
+            document.write("<br>sub : "+(a-b));
+        }
+        mul(a,b){
+            document.write("<br>mul : "+(a*b));
+        }
+        div(a,b){
+            document.write("<br>div : "+(a/b));
+        }
+        mod(a,b){
+            document.write("<br>mod : "+(a%b));
+        }
+    }    
+    const obj = new MyClass();
+    obj.add(a,b);
+    obj.sub(a,b);
+    obj.mul(a,b);
+    obj.div(a,b);
+    obj.mod(a,b);
+</script>

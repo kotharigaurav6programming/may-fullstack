@@ -1,0 +1,14 @@
+<!-- example showing the concept of class and object | constructor -->
+ <script>
+    class Demo{
+        constructor(a,b){
+            this.a = a;
+            this.b = b;
+        }
+        add(){
+            document.write("<br>Addition : "+(this.a+this.b));
+        }
+    }
+    const obj = new Demo(45,56);
+    obj.add();
+ </script>

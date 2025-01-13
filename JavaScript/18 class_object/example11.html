@@ -1,0 +1,28 @@
+<!-- example showing the concept of class and object-->
+ <script>
+    class Demo{
+        km;
+        m;
+        setData(km,m){
+            this.km = km;
+            this.m = m;
+        }
+        getTotalDistance(obj1,obj2){
+            this.km = obj1.km+obj2.km; 
+            this.m = obj1.m+obj2.m;
+            while(this.m>=1000){
+                this.km+=1;
+                this.m-=1000;
+            }
+            document.write("km : "+this.km+" m : "+this.m);
+        }
+    }
+    const obj1 = new Demo();
+    obj1.setData(5,300); 
+
+    const obj2 = new Demo();
+    obj2.setData(2,2345); 
+
+    const obj3 = new Demo();
+    obj3.getTotalDistance(obj1,obj2);
+</script>

@@ -1,0 +1,27 @@
+<!-- Example showing the concept of freeze -->
+ <script>
+    var obj = {
+        name:"Andrew Anderson",
+        age:56,
+        salary:90000
+    }
+    document.write("<br>isFrozen : "+Object.isFrozen(obj));
+    // document.write("<br>name : "+obj.name);
+    // document.write("<br>age : "+obj.age);
+    // document.write("<br>salary : "+obj.salary);
+    // obj.salary+=50000;
+    // document.write("<br>salary : "+obj.salary);
+    // delete obj.age;
+    // document.write("<br>age : "+obj.age);
+
+    Object.freeze(obj);
+    document.write("<br>isFrozen : "+Object.isFrozen(obj));
+    document.write("<br>name : "+obj.name);
+    document.write("<br>age : "+obj.age);
+    document.write("<br>salary : "+obj.salary);
+    obj.salary+=50000;
+    document.write("<br>salary : "+obj.salary);
+    delete obj.age;
+    document.write("<br>age : "+obj.age);
+    
+ </script>

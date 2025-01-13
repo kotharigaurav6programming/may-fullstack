@@ -1,0 +1,30 @@
+<!-- Example showing the concept of curring -->
+<script>
+    var a = parseInt(prompt("Enter First Number"));
+    var b = parseInt(prompt("Enter Second Number"));           
+    function operation(operator){
+        return (a)=>{
+            return (b)=>{
+                switch(operator){
+                    case '+' : return a+b;
+                    case '-' : return a-b;
+                    case '*' : return a*b;
+                    case '/' : return a/b;
+                    case '%' : return a%b;
+                }
+            }
+        }
+    }
+    var add = operation('+');
+    var sub = operation('-');
+    var mul = operation('*');
+    var div = operation('/');
+    var mod = operation('%');
+   
+    document.write("<br>Addition : "+add(a)(b));
+    document.write("<br>Subtraction : "+sub(a)(b));
+    document.write("<br>Multiplication : "+mul(a)(b));
+    document.write("<br>Division : "+div(a)(b));
+    document.write("<br>Modulus : "+mod(a)(b));
+
+</script>

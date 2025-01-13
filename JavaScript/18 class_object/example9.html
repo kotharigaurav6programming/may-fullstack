@@ -1,0 +1,14 @@
+<!-- example showing the concept of class and object | static -->
+ <script>
+    class Demo{
+        static name = "Andrew Anderson";
+        static getMessage(){
+            return `Hello ${Demo.name}`;
+        }
+        display(){
+            document.write(Demo.getMessage());
+        }
+    }
+    const obj = new Demo();
+    obj.display();
+ </script>
