@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo3{
+            color:white;
+        }
+        .demo4{
+            font-family: cursive;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo1" class="demo3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus, sapiente.</div>
+
+    <div class="demo2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, ea?</div>
+    <div class="demo2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, ea?</div>
+    <div class="demo2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, ea?</div>
+
+    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptatibus?</span> <br>
+    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptatibus?</span> <br>
+    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptatibus?</span> <br>
+    
+    <script>
+        var demo1 = document.getElementById("demo1");
+        demo1.style.backgroundColor="crimson";
+        demo1.classList.remove('demo3'); 
+        demo1.classList.add('demo4');
+
+        var array = document.getElementsByClassName("demo2");
+        for(i=0;i<array.length;i++){
+            if(i==0)
+                array[0].style.backgroundColor="orange";
+            if(i==1)
+                array[1].style.backgroundColor="orangered";
+            if(i==2)
+                array[2].style.backgroundColor="teal";
+            }
+            var array = document.getElementsByClassName("demo2");
+
+            var arrayNew = document.getElementsByTagName("span");
+            for(i=0;i<arrayNew.length;i++){
+            if(i==0)
+                arrayNew[0].style.backgroundColor="orange";
+            if(i==1)
+                arrayNew[1].style.backgroundColor="orangered";
+            if(i==2)
+                arrayNew[2].style.backgroundColor="teal";
+            }
+
+</script>
+
+</body>
+</html>
