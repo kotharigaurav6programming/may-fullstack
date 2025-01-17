@@ -1,0 +1,17 @@
+<!-- Example showing the concept of bind apply and call method -->
+
+<script>
+    function getDetails(s1,s2,s3,s4,s5){
+        return `Hello ${this.name}, your age is ${this.age} and salary is ${this.salary} and you are expertise in ${s1},${s2},${s3},${s4},${s5}`;
+    }
+
+    const obj = {
+        name:"Andrew Peterson",
+        age:56,
+        salary:20000
+    }
+
+    const res = getDetails.call(obj,"C","C++","JAVA","Php","Node");
+    console.log(res);
+    
+</script>
