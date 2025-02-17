@@ -1,0 +1,1 @@
+This is an example of pipe method in node js to transfer data from source to destination.
