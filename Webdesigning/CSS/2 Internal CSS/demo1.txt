@@ -7,15 +7,17 @@
     <!-- Internal CSS -->
     <style>
 
-selectors
- |---
-        color:red;
-        font-size:30px;
-selectors
- |---    
-        color:green;
-        font-size:35px;
+            selectors
+            |---
+                    color:red;
+                    font-size:30px;
+            selectors
+            |---    
+                    color:green;
+                    font-size:35px;
     
+    Selector : selectors simply represents, which property corresponding to its value is going to be implemented on which element.
+
     </style>
 </head>
 <body>
@@ -136,9 +138,8 @@ div p span{         <------- descendent selector
     iii. General sibling selector
     iv. Attribute selector 
     v. nth-of-type selector 
-
-8. Pseudo element selector(::) 
-9. Pseudo class selector(:) 
+    vi. Pseudo element selector(::) 
+    vii.Pseudo class selector(:) 
 
 
 

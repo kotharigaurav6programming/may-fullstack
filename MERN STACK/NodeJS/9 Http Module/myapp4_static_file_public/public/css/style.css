@@ -1,0 +1,15 @@
+body{
+    background-color: darkslategrey;
+    color:white;
+}
+#section1{
+    width: 60%;
+    float: left;
+}
+#section2{
+    width: 38%;
+    float: left;
+}
+#myimage{
+    width: 100%;
+}
