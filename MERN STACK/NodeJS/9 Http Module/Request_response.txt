@@ -1,0 +1,30 @@
+request is the object of IncomingMessage and response is the object of ServerResponse ? 
+
+Yes, that's correct. In Node.js, when you're working with HTTP requests and responses using the core `http` module, the request is typically represented as an instance of the `http.IncomingMessage` class, and the response is represented as an instance of the `http.ServerResponse` class. Here's a brief explanation:
+
+1. **IncomingMessage (`req`)**: The `http.IncomingMessage` class represents the incoming HTTP request. When a client sends an HTTP request to your server, Node.js creates an instance of `http.IncomingMessage` to represent that request. This object contains information about the request, such as the HTTP method, URL, headers, and more. In common usage, this object is often referred to as `req` (short for "request").
+
+2. **ServerResponse (`res`)**: The `http.ServerResponse` class represents the HTTP response that your server sends back to the client. When you want to send a response to an incoming HTTP request, you create an instance of `http.ServerResponse` to construct and send that response. This object provides methods and properties for setting the response status code, headers, and writing the response body. In common usage, this object is often referred to as `res` (short for "response").
+
+Here's a simplified example illustrating how these objects are used:
+
+```javascript
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  // 'req' is an instance of http.IncomingMessage representing the incoming HTTP request.
+  // 'res' is an instance of http.ServerResponse representing the response.
+
+  // Set the response status code and headers
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+
+  // Write the response body
+  res.end('Hello, World!\n');
+});
+
+server.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
+```
+
+In this example, `req` is an instance of `http.IncomingMessage`, and `res` is an instance of `http.ServerResponse`. These objects are used to handle incoming HTTP requests and send responses back to clients.
