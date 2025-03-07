@@ -1,0 +1,14 @@
+#leftDiv{
+    float: left;
+    margin: 10px;
+    width: 48%;
+}
+#rightDiv{
+    float: left;
+    margin: 10px;
+    width: 40%;
+}
+#img{
+    height:250px;
+    width: 100%;
+}
