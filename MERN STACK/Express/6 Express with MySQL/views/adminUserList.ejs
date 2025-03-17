@@ -8,6 +8,7 @@
 <body>
     <%-include('./adminHomeHeader.ejs')%>
     <h2>User List</h2>
+    <span style="color:green"><%=message%></span>
     <table border="1" cellspacing="0" cellpadding="10">
         <thead>
             <tr>
@@ -25,8 +26,24 @@
                     <td><%=obj.username%></td>
                     <td><%=obj.email%></td>
                     <td><%=obj.address%></td>
-                    <td>Block</td>
-                    <td>Verify</td>
+                    <td>
+                        <%if(obj.blockstatus==0){%>
+                            <a style="text-decoration: none;" href="/admin/adminBlockUser?email=<%=obj.email%>">
+                                Block
+                            </a>
+                        <%}else{%>
+                            <span style="color:red">Blocked</span>
+                        <%}%>
+                    </td>
+                    <td>
+                        <%if(obj.adminverify==0){%>
+                            <a style="text-decoration: none;" href="/admin/adminVerifyUser?email=<%=obj.email%>">
+                                Verify
+                            </a>
+                        <%}else{%>
+                            <span style="color:red">Verified</span>
+                        <%}%>
+                    </td>
                 </tr>
             <%})%>
         </tbody>
