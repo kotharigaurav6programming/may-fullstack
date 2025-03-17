@@ -6,6 +6,8 @@ import userRouter from './router/userRouter.js';
 dotenv.config();
 var app = express();
 app.use(createDatabase);
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
 app.set("views","views");
 app.set("view engine",'ejs');
 

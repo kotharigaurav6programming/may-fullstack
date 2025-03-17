@@ -12,6 +12,13 @@ function checkDb() {
                 // console.log("result : ",result);
                 if (result.length > 0) {
                     console.log("Database exist");
+                    const useQuery = `use ${process.env.DATABASE_NAME}`;
+                    con.query(useQuery, (error) => {
+                        if(error)
+                            console.log("Error while use database when database exist : ",error);
+                        else
+                            console.log("Database selected successfully");
+                    });
                     resolve(true);
                 } else {
                     console.log("Database not exist");
@@ -52,7 +59,7 @@ function createDb() {
                                             reject(error);
                                         } else {
                                             console.log("Data in admin table inserted successfully");
-                                            const userQuery = 'create table user(uid int not null primary key auto_increment,username varchar(45) not null,email varchar(45) unique not null,address varchar(45) not null,blockstatus tinyint not null default 0, adminverify tinyint not null default 0)';
+                                            const userQuery = 'create table user(uid int not null primary key auto_increment,username varchar(45) not null,email varchar(45) unique not null,password varchar(45) not null,address varchar(45) not null,blockstatus tinyint not null default 0, adminverify tinyint not null default 0)';
                                             con.query(userQuery, (error) => {
                                                 if (error) {
                                                     console.log("Error while creating user table : ", error);

@@ -40,3 +40,12 @@ interface demo{                 interface demo2{
     |_________________________________|   |
                     |                     |
                  MyApp               MyAnotherApp
+
+
+
+interface A{       interface B{
+   chating            video calling 
+}     |            }      |   |
+      |___________________|   |
+               |              |
+          class Ademo     class Bdemo  
