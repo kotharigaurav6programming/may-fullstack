@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('./userHomeHeader.ejs')%>
+    <h2>User Add To Do</h2>
+    <form action="/user/addToDo" method="post">
+        Title <br>
+        <input type="text" placeholder="Enter ToDo Title" name="toDoTitle" id="toDoTitle"> <br>
+        Start Date <br>
+        <input type="date" name="startDate" id="startDate"> <br>
+        End Date <br>
+        <input type="date" name="endDate" id="endDate"> <br>
+        Status <br>
+        <select name="status" id="status">
+        <option value="">Select Status</option>
+        <option selected value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+       </select> <br> <br>
+        <input type="submit" value="Add To Do"> 
+        <input type="reset" value="Reset">
+    </form>   
+</body>
+</html>

@@ -9,7 +9,7 @@ export const registerController = async (request,response)=>{
                 console.log("Error while inserting data : ",error);
             else{
                 console.log("Result : ",result);
-                response.render("userLogin.ejs");                
+                response.render("userLogin.ejs",{message:"",status:""});                
             }
         });
     }catch(error){
@@ -34,4 +34,45 @@ export const userLoginController = async (request,response)=>{
            }
         }    
     });
+}
+
+export const addToDoController = async(request,response)=>{
+    try{
+        console.log(request.body);
+        const insertQuery = 'insert into todo(todotitle,startdate,enddate,status) values(?,?,?,?)';
+        const values = [request.body.toDoTitle,request.body.startDate,request.body.endDate,request.body.status];
+        con.query(insertQuery,values,(error,result)=>{
+            if(error)
+                console.log("Error occured while adding to do task");
+            else{
+                const todoQuery = 'select * from todo';
+                con.query(todoQuery,(error,todoData)=>{
+                    if(error)
+                        console.log("Error while viewing todo : ",error);
+                    else{
+                        response.render("viewToDo.ejs",{email:request.session.email,todoData:todoData,message:"",status:""});
+                    }
+                })
+                
+            }
+        });
+    }catch(error){
+        console.log("Error : ",error);
+        response.render("userLogin.ejs",{message:"Something went wrong",status:""});
+    }   
+}
+export const userViewToDoController = async(request,response)=>{
+    try{
+        const todoQuery = 'select * from todo';
+        con.query(todoQuery,(error,todoData)=>{
+            if(error)
+                console.log("Error while viewing todo : ",error);
+            else{
+                response.render("viewToDo.ejs",{email:request.session.email,todoData:todoData,message:"",status:""});
+                }
+            })
+    }catch(error){
+        console.log("Error : ",error);
+        response.render("userLogin.ejs",{message:"Something went wrong",status:""});
+    }   
 }

@@ -59,6 +59,7 @@ function createDb() {
                                             reject(error);
                                         } else {
                                             console.log("Data in admin table inserted successfully");
+                                            
                                             const userQuery = 'create table user(uid int not null primary key auto_increment,username varchar(45) not null,email varchar(45) unique not null,password varchar(45) not null,address varchar(45) not null,blockstatus tinyint not null default 0, adminverify tinyint not null default 0)';
                                             con.query(userQuery, (error) => {
                                                 if (error) {
@@ -66,8 +67,17 @@ function createDb() {
                                                     reject(error);
                                                 } else {
                                                     console.log("User table created successfully");
-                                                    resolve(true);
-                                                }
+                                                    const todoQuery = 'create table todo(todoid int not null primary key auto_increment,todotitle varchar(45) not null,startdate varchar(45) not null,enddate varchar(45) not null,status varchar(45) not null)';
+                                                    con.query(todoQuery, (error) => {
+                                                        if (error) {
+                                                            console.log("Error while creating todo table : ", error);
+                                                            reject(error);
+                                                        } else {
+                                                            console.log("Todo table created successfully");
+                                                            resolve(true);
+                                                        }
+                                                })
+                                              }
                                             });
                                         }
                                     });
