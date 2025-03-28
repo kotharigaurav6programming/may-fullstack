@@ -14,7 +14,10 @@
     <a href="/admin">Admin</a>    |   
     <a href="/user">User</a>    
     <hr>
-    <h2>UserLogin</h2>
+    <h2>UserRegistration</h2>
+    <span style="color:red">
+        <%=message%>
+    </span>
     <form action="/user/userRegister" method="post">
         <input type="text" placeholder="Enter username" name="username" id="username"> <br>
 
@@ -27,7 +30,7 @@
         <input type="submit" value="Register">
         <input type="reset" value="Reset">
         
-        <br>
+        <br><br>
         <a href="/user/login">Already Registered ? Login Here</a>
     </form>
 </body>
