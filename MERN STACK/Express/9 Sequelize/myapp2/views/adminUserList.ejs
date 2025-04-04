@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h2>Example of Sequelize | Admin Panel</h2>
+    </center>
+    <hr>
+    Welcome <%=email%> | 
+    <a href="/admin/adminHome">Home</a>    |   
+    <a href="/admin/userList">UserList</a>    |   
+    <a href="/logout">Logout</a>    
+    <hr>
+    <table align="center" border="1" cellspacing="0" cellpadding="10">
+        <caption>
+            <h2>Student List</h2>
+            <span style="color:green"><%=message%></span>
+        </caption>
+        <tr>
+            <th>UID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Status</th>
+            <th>AdminVerify</th>
+        </tr>
+        
+            <%dataArray.forEach((obj,index)=>{%>
+                <tr>
+                    <td><%=obj.uid%></td>
+                    <td><%=obj.username%></td>
+                    <td><%=obj.email%></td>
+                    <td><%=obj.address%></td>
+                    <td><%=obj.status%></td>
+                    <td>
+                        <%if(obj.adminVerify=='Verified'){%>
+                            <span style="color:green">Verified</span>
+                        <%}else{%>
+                            <form action="/admin/verifyStudent" method="post">
+                                <input type="hidden" name="email" id="email" value="<%=obj.email%>">
+                                <button><%=obj.adminVerify%></button>
+                            </form>
+                        <%}%>
+                    </td>
+                </tr>
+            <%})%>
+        </tr>
+    </table>
+</body>
+</html>

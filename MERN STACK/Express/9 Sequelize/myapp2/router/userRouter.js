@@ -1,5 +1,5 @@
 import express from 'express';
-import { userRegisterController } from '../controller/userController.js';
+import { userRegisterController,userLoginController } from '../controller/userController.js';
 var userRouter = express.Router();
 
 userRouter.get("/",(request,response)=>{
@@ -12,6 +12,6 @@ userRouter.get("/login",(request,response)=>{
     response.render("userLogin.ejs",{message:"",status:""});
 });
 userRouter.post("/userRegister",userRegisterController);
-
+userRouter.post("/userLogin",userLoginController);
 
 export default userRouter;

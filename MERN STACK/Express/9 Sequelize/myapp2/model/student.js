@@ -23,7 +23,16 @@ const student = sequelize.define("student",{
     address :{
         type:DataTypes.STRING,
         allowNull:false
+    },
+    status :{
+        type:DataTypes.BOOLEAN,
+        defaultValue:true
+    },
+    adminVerify:{
+        type:DataTypes.STRING,
+        defaultValue:'Not Verified'
     }
+
 },{tableName:"student"});
 
 const res = await student.sequelize.sync();
