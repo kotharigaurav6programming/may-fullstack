@@ -60,6 +60,7 @@
         salary:18000
     }
 },{multi:true});
+
 19. db.Employee.updateMany({
     name:'Mathew Math'
 },{
@@ -67,5 +68,13 @@
         address:'USA'
     }
 });
+
+20. db.Employee.update({},{$set:{pincode:452010}});
+21. db.Employee.update({name:'Peter Parker'},{$set:{pincode:452010}});
+22. db.Employee.update({},{$set:{pincode:452010}},{multi:true});
+23. db.Employee.updateMany({},{$set:{stdcode:0731}});
+24. db.Employee.updateMany({},{$set:{stdcode:"0731"}});
+25. db.Employee.updateMany({},{$unset:{stdcode:"0731"}});
+
 
 
