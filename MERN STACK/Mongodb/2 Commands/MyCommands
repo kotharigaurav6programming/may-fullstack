@@ -1,0 +1,71 @@
+1. show dbs;
+2. use codingdb;
+3. db.dropDatabase();
+4. db.createCollection("Employee");
+5. db.createCollection("EmployeeNew");
+6. show collections;
+7. db.EmployeeNew.drop();
+8. db.Employee.insert({
+    name:'Andrew Anderson',
+    age:45,
+    salary:25000,
+    address : 'India'
+});
+9. db.Employee.insertOne({
+    name:'Peter Parker',
+    age:55,
+    salary:35000,
+    address : 'USA'
+});
+10. db.Employee.insertMany([{
+    name:'Mathew Math',
+    age:65,
+    salary:15000,
+    address : 'Australia'
+},{
+    name:'Jack Jackson',
+    age:75,
+    salary:5000,
+    address : 'America'
+},{
+    name:'Kimpson Knight',
+    age:65,
+    salary:15000,
+    address : 'West Indies'
+}]);
+11. db.Employee.find();
+12. db.Employee.find().pretty();
+13. db.Employee.bulkWrite([{
+    insertOne:{
+            name:'Mathew Math',
+            age:65,
+            salary:15000,
+            address : 'Australia'
+        }
+    }]);
+14. db.Employee.find({name:'Andrew Anderson'});
+15. db.Employee.find({name:'Mathew Math'});
+16. db.Employee.find({name:'Mathew Math',age:65});
+17. db.Employee.update({
+        name:'Mathew Math'
+    },{
+        $set:{
+            age:23
+        }
+    });
+18. db.Employee.update({
+    name:'Mathew Math'
+},{
+    $set:{
+        salary:18000
+    }
+},{multi:true});
+19. db.Employee.updateMany({
+    name:'Mathew Math'
+},{
+    $set:{
+        address:'USA'
+    }
+});
+
+
