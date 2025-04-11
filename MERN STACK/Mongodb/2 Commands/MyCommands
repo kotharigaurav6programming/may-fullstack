@@ -75,6 +75,59 @@
 23. db.Employee.updateMany({},{$set:{stdcode:0731}});
 24. db.Employee.updateMany({},{$set:{stdcode:"0731"}});
 25. db.Employee.updateMany({},{$unset:{stdcode:"0731"}});
+26. db.Employee.remove({name:'Mathew Math',age:23});
+27. db.Employee.find({},{_id:0});
+28. db.Employee.find({},{_id:0,name:0,salary:0});
+29. db.Employee.find({
+        salary : {
+            $gt : 50000
+        }
+    });
+30. db.Employee.find({salary:{$eq:25000}});
+31. db.Employee.find({salary:{$lte:25000}});
+32. db.Employee.find({salary:{$in:[25000]}});
+33. db.Employee.find({salary:{$in:[25000,18000]}});
+34. db.Employee.find({salary:{$nin:[25000,18000]}});
+35. db.Employee.find({
+        $or:[
+            {
+                age:65
+            },{
+                address:'New York'
+            }
+        ]
+    });
 
+    db.Employee.find({
+        $and:[
+            {
+                age:65
+            },{
+                address:'New York'
+            }
+        ]
+    });
 
+    db.Employee.find({
+        $nor:[
+            {
+                age:65
+            },{
+                address:'USA'
+            }
+        ]
+    });
 
+    db.Employee.find({ age : {$not: { $eq: 65 }}});
+     
+36. db.Employee.find()[0];
+    db.Employee.find()[2];
+    db.Employee.find()[3];
+    
+    db.Employee.find().count();
+    db.Employee.find().limit(3);
+    db.Employee.find().skip(2);
+
+37. db.Employee.find().sort({name:1});  
+    db.Employee.find().sort({name:-1});
+    db.Employee.find().sort({age:1,address:-1});
