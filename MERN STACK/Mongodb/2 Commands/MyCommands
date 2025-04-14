@@ -118,6 +118,26 @@
         ]
     });
 
+    db.Employee.find({
+        $and : [
+            {
+                age : {
+                    $gt : 60
+                }
+            },{
+                $and:[
+                    {
+                        salary : {
+                            $gte:5000
+                        }
+                    },{
+                        address : "America"
+                    }
+                ]
+            }
+        ]
+    });
+
     db.Employee.find({ age : {$not: { $eq: 65 }}});
      
 36. db.Employee.find()[0];
@@ -131,3 +151,91 @@
 37. db.Employee.find().sort({name:1});  
     db.Employee.find().sort({name:-1});
     db.Employee.find().sort({age:1,address:-1});
+
+38. db.Employee.find().sort({salary:-1}).toArray()[0];
+
+    // name of highest salary person
+39. db.Employee.find().sort({salary:-1}).toArray()[0].name;
+
+    // second highest salary
+40. db.Employee.find({
+    salary : {
+        $ne : db.Employee.find().sort({salary:-1}).toArray()[0].salary
+    }
+}).sort({salary:-1}).toArray()[0].salary;
+
+// second highest salary person name
+41. db.Employee.find({
+    salary : {
+        $ne : db.Employee.find().sort({salary:-1}).toArray()[0].salary
+    }
+}).sort({salary:-1}).toArray()[0].name;
+
+42. db.Employee.find({
+    salary : {
+        $lt : db.Employee.find({
+            salary : {
+                $ne : db.Employee.find().sort({salary:-1}).toArray()[0].salary
+            }
+        }).sort({salary:-1}).toArray()[0].salary
+    }
+}).sort({salary:-1}).toArray()[0].salary;
+
+43. db.Employee.aggregate([{
+    $group:{
+        _id:"$name"
+    }
+}]);
+
+44. db.Employee.aggregate([{ 
+    $group: 
+        { 
+            _id: "$name",
+            total_entries:{$sum:1} 
+        } 
+    }]);
+
+    db.Employee.aggregate([{ 
+        $group: 
+            { 
+                _id: "$age",
+                total_entries:{$sum:1} 
+            } 
+        }]);
+
+    db.Employee.aggregate([{ 
+        $group: 
+            { 
+                _id: "",
+                max_age:{$max:"$age"} 
+            } 
+        }]);
+
+    db.Employee.aggregate([{ 
+        $group: 
+            { 
+                _id: "",
+                min_age:{$min:"$age"} 
+            } 
+        }]);
+
+    db.Employee.aggregate([{ 
+        $group: 
+            { 
+                _id: "",
+                avg_age:{$avg:"$age"} 
+            } 
+        }]);
+
+    db.Employee.aggregate([{ 
+        $group: 
+            { 
+                _id: "",
+                sum_age:{$sum:"$age"} 
+            } 
+        }]);
+        
+45. db.Employee.insertOne({name:'abc',shirts:['small','medium','large']});
+    db.Employee.aggregate([{
+        $unwind:"$shirts"
+    }]);    
