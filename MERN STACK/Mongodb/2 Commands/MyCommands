@@ -239,3 +239,123 @@
     db.Employee.aggregate([{
         $unwind:"$shirts"
     }]);    
+
+46. db.Employee.aggregate([{
+    $group:{
+        _id:"$name"
+    }
+}]);    
+
+47. db.Employee.aggregate([{
+    $group:{
+        _id:"",
+        name:{$first:"$name"}
+    }
+}]);    
+
+48. db.Employee.aggregate([{
+    $group:{
+        _id:"",
+        name:{$last:"$name"}
+    }
+}]);    
+
+49. db.Employee.aggregate([{ $group: { _id: "$name" } }, { $limit:2 }] );
+50. db.Employee.aggregate([{ $group: { _id: "$name" } }, { $skip:2 }] );
+51. db.Employee.aggregate([{ $group: { _id: "$name" } }, { $sort:{_id:1} }] );
+52. db.Employee.aggregate([{ $group: { _id: "$name" } }, { $sort:{_id:-1} }] );
+53. db.Employee.aggregate([{
+    $group:{
+        _id:"$name",
+        age:{$sum:"$age"} ,
+        salary:{$sum:"$salary"}
+    }
+}]);    
+
+54. db.Employee.insertOne({name:'Jack Jackson',salary:55000});
+
+55. db.Employee.aggregate([{
+    $group:{
+        _id:"",
+        age:{$sum:"$age"} ,
+        salary:{$sum:"$salary"}
+    }
+}]);    
+
+56. db.Employee.aggregate([{
+    $group:{
+        _id:"$name",
+        age:{$sum:"$age"} ,
+        salary:{$sum:"$salary"}
+    }
+},{
+    $project:{
+        age:1,
+        _id:0
+    }
+}]);    
+
+57. db.createCollection("product");
+58. db.createCollection("category");
+59. db.product.insertMany([
+        {
+            name:"fan",
+            price:15000,
+            product_id:'PROD001',
+            category_id:100
+        },{
+            name:"fairness cream",
+            price:18000,
+            product_id:'PROD002',
+            category_id:200
+        },{
+            name:"rice",
+            price:13000,
+            product_id:'PROD002',
+            category_id:300
+        }
+    ]);
+
+60. db.category.insertMany([
+        {
+            name:"Electronics",
+            cat_id:100
+        },
+        {
+            name:"Cosmatics",
+            cat_id:200
+        }
+    ]);
+
+61. db.product.aggregate([
+        {
+            $lookup:{
+                from : "category",
+                foreignField:"cat_id",
+                localField:"category_id",
+                as : "Product Details"
+            }
+        }
+    ]);
+
+62. db.product.aggregate([
+        {
+            $lookup:{
+                from : "category",
+                foreignField:"cat_id",
+                localField:"category_id",
+                as : "Product Details"
+            }
+        },{
+            $match:{
+                price:{
+                    $gte:15000
+                }
+            }
+        }
+    ]);
+
+63. db.Employee.getIndexes();
+64. db.Employee.createIndex({age:1});
+65. db.Employee.insertOne({age:1},{expireAt:new Date()});    // needs to explore
+66. db.Employee.createIndex({age:1},{expireAfterSeconds : 15}); // needs to explore
