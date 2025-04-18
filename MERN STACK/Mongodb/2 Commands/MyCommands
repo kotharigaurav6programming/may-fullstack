@@ -357,5 +357,5 @@
 
 63. db.Employee.getIndexes();
 64. db.Employee.createIndex({age:1});
-65. db.Employee.insertOne({age:1},{expireAt:new Date()});    // needs to explore
-66. db.Employee.createIndex({age:1},{expireAfterSeconds : 15}); // needs to explore
+65. db.Employee.insertOne({name:"DemoUserNew",expireAt:new Date()}); 
+66. db.Employee.createIndex({expireAt:1},{expireAfterSeconds : 15}); 
