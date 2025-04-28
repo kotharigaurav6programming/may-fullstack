@@ -4,19 +4,19 @@ const mailer = function(email,callback){
     const transport = nodemailer.createTransport({
         service:'gmail',
         auth:{
-            user : '<email_id>',
-            pass : 'password'
+            user : process.env.EMAIL,
+            pass : process.env.PASSWORD
         }
     });
 
     const mailOption = {
-        from : '<email_id>',
+        from : 'codingproject3@gmail.com',
         to : email,
         subject : 'Its Verification Mail',
         html : `Hello ${email}, Welcome to our site. This is a verification mail from our side. You need to verify yourself by clicking on the link below. <br> 
-        <form action='/verifyEmail' method='post'>
+        <form action='http://localhost:3000/verifyEmail' method='post'>
             <input type='hidden' name='email' id='email' value='${email}'>
-            <input type='submit' value='Click to verify'>
+            <button>Click Here to Verify</button>
         </form>`
     }
 
