@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%if(galleryData.length==0){%>
+        No Record Found
+    <%}else{%>
+        <table border="1" cellspacing="0" cellpadding="8">
+            <tr>
+                <th>S.No</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>ProfileOne</th>
+                <th>ProfileTwo</th>    
+            </tr>
+            <%galleryData.forEach((obj,index)=>{%>
+                <tr>
+                    <td><%=index+1%></td>
+                    <td><%=obj.username%></td>
+                    <td><%=obj.email%></td>
+                    <td><%=obj.address%></td>
+                    <td>
+                        <%obj.profileOne.forEach((filename)=>{%>
+                            <a download href="/images/<%=filename%>"><img src="/images/<%=filename%>" height="50" width="50" alt=""></a>                            
+                        <%})%>
+                    </td>
+                    <td>
+                        <%obj.profileTwo.forEach((filename)=>{%>
+                            <a download href="/images/<%=filename%>"><img src="/images/<%=filename%>" height="50" width="50" alt=""></a>                            
+                        <%})%>
+                    </td>
+                </tr>                
+            <%})%>
+        </table>    
+    <%}%>
+</body>
+</html>

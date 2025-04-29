@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Express File Upload Example</h1>
+        <h3><%=message%></h3>
+    </center>
+    <h2>Fill Details</h2>
+    <form action="/register" method="post" enctype="multipart/form-data">
+    <input type="text" placeholder="Enter Username" name="username" id="username"> <br>
+    <input type="email" placeholder="Enter Email" name="email" id="email"> <br>
+    <input type="password" placeholder="Enter Password" name="password" id="password"> <br>
+    <input type="text" placeholder="Enter Address" name="address" id="address"> <br>
+    <input type="file" name="profile" id="profile"><br>
+    <input type="submit" value="Submit Form"> <br>
+    <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
