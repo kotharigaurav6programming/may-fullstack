@@ -185,7 +185,9 @@ export const adminAssignClassController = async (request,response)=>{
         const classIdData = await classSchema.find({status:true});
         const studentIdData = await studentSchema.find({status:true});
         const teacherIdData = await teacherSchema.find({status:true});
-        response.render("adminAssignClass.ejs",{classIdData,studentIdData,teacherIdData,email:request.adminPayload.email,message:"", status:""});      
+        const sessionIdData = await sessionSchema.find({status:true});
+
+        response.render("adminAssignClass.ejs",{classIdData,studentIdData,teacherIdData,sessionIdData,email:request.adminPayload.email,message:"", status:""});      
     }catch(error){
         console.log("Error in adminAssignClassController : ",error);
         response.render("adminHome.ejs",{email:request.adminPayload.email,message:"", status:status.ERROR});                      
@@ -198,6 +200,7 @@ export const assignClassController = async (request,response)=>{
         const classIdData = await classSchema.find({status:true});
         const studentIdData = await studentSchema.find({status:true});
         const teacherIdData = await teacherSchema.find({status:true});
+        const sessionIdData = await sessionSchema.find({status:true});
 
         request.body.classATStudentId = uuid4();
         console.log("received data : ",request.body);
@@ -209,18 +212,19 @@ export const assignClassController = async (request,response)=>{
             ]
         });
         if(studStatus){
-            response.render("adminAssignClass.ejs",{classIdData,studentIdData,teacherIdData,email:request.adminPayload.email,message:message.CLASS_ALREADY_ASSIGNED, status:status.SUCCESS});
+            response.render("adminAssignClass.ejs",{classIdData,studentIdData,teacherIdData,sessionIdData,email:request.adminPayload.email,message:message.CLASS_ALREADY_ASSIGNED, status:status.SUCCESS});
         }else{
             const res = await classAssignedToStudentSchema.create(request.body);
-            response.render("adminAssignClass.ejs",{classIdData,studentIdData,teacherIdData,email:request.adminPayload.email,message:message.CLASS_ASSIGNED, status:status.SUCCESS});     
+            response.render("adminAssignClass.ejs",{classIdData,studentIdData,teacherIdData,sessionIdData,email:request.adminPayload.email,message:message.CLASS_ASSIGNED, status:status.SUCCESS});     
         }
     }catch(error){
         const classIdData = await classSchema.find({status:true});
         const studentIdData = await studentSchema.find({status:true});
         const teacherIdData = await teacherSchema.find({status:true});
+        const sessionIdData = await sessionSchema.find({status:true});
 
         console.log("Error in assignClassController : ",error);
-        response.render("adminAssignClass.ejs",{classIdData,studentIdData,teacherIdData,email:request.adminPayload.email,message:message.SOMETHING_WENT_WRONG, status:status.ERROR});                      
+        response.render("adminAssignClass.ejs",{classIdData,studentIdData,teacherIdData,sessionIdData,email:request.adminPayload.email,message:message.SOMETHING_WENT_WRONG, status:status.ERROR});                      
     }
 }
 

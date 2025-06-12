@@ -1,5 +1,5 @@
 import express from 'express';
-import { addStudentController,studentLoginController,loginStudentController,studentHomeController } from '../controller/studentController.js';
+import { addStudentController,studentLoginController,loginStudentController,studentHomeController,viewMealController,viewTimeTableController,viewAssignmentController } from '../controller/studentController.js';
 import { message, status } from '../utils/statusMessage.js';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
@@ -53,4 +53,8 @@ studentRouter.post('/addStudent',addStudentController);
 studentRouter.get('/studentLogin',studentLoginController);
 studentRouter.post('/studentLogin',loginStudentController);
 studentRouter.get('/studentHome',authenticateJWT,authorizeJWT,studentHomeController);
+studentRouter.get("/viewMeal",authenticateJWT,viewMealController);
+studentRouter.get("/viewTimeTable",authenticateJWT,viewTimeTableController);
+studentRouter.get("/viewAssignment",authenticateJWT,viewAssignmentController);
+
 export default studentRouter;

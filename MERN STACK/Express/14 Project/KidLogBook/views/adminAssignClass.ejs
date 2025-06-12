@@ -97,7 +97,13 @@
                                     </select>       <br>
                                 <input class="form-control" placeholder="Enter School Timings" name="schoolTiming" id="schoolTiming"> <br>
                                 
-                                <input class="form-control" placeholder="Enter Session (2025-26)" name="currentSession" id="currentSession"> 
+                                 <select class="form-control border-0 p-1" name="currentSession" id="currentSession"
+                                    required>
+                                    <option value="">Select Session</option>
+                                       <% for(var i=0; i < sessionIdData.length; i++){%>
+                                            <option value="<%=sessionIdData[i].session%>"><%=sessionIdData[i].session%></option>
+                                        <%} %>
+                                    </select> 
                                     
                                 </div>
                                 <div>

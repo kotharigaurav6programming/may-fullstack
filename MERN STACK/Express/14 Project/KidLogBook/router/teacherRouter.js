@@ -1,5 +1,5 @@
 import express from 'express';
-import { teacherRegistrationDataController,teacherLoginController,loginTeacherController,teacherHomeController,studentRegistrationLinkController,classAssignedController } from '../controller/teacherController.js';
+import { teacherRegistrationDataController,teacherLoginController,loginTeacherController,teacherHomeController,studentRegistrationLinkController,classAssignedController,sessionStudentDataController,announcementController,addAnnouncementController, addAnnouncementDataController,addMealMenuController,addTimeTableController,addAssignmentController } from '../controller/teacherController.js';
 import { message, status } from '../utils/statusMessage.js';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
@@ -54,4 +54,12 @@ teacherRouter.post('/teacherLogin',loginTeacherController);
 teacherRouter.get('/teacherHome',authenticateJWT,authorizeJWT,teacherHomeController);
 teacherRouter.post('/studentRegistrationLink',authenticateJWT,studentRegistrationLinkController);
 teacherRouter.get('/classAssigned',authenticateJWT,classAssignedController);
+teacherRouter.post('/sessionStudentData',authenticateJWT,sessionStudentDataController);
+teacherRouter.get('/announcement',authenticateJWT,announcementController);
+teacherRouter.post('/addAnnouncement',authenticateJWT,addAnnouncementController);
+teacherRouter.post('/addAnnouncementData',authenticateJWT,addAnnouncementDataController);
+teacherRouter.post('/addMealMenu',authenticateJWT,addMealMenuController);
+teacherRouter.post('/addTimeTable',authenticateJWT,addTimeTableController);
+teacherRouter.post('/addAssignment',authenticateJWT,addAssignmentController);
+
 export default teacherRouter;

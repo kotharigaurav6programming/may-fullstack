@@ -18,6 +18,10 @@ export const message = {
     CLASS_ASSIGNED:"Class Assigned To Student Successfully",
     CLASS_ALREADY_ASSIGNED:"Class Already Assigned To Student",
     SESSION_ADDED : "Session Added Successfully",
+    ANNOUNCEMENT_POSTED : "Announcement Posted Successsfully",
+    MEAL_STATUS : "Meal Menu Uploaded Successfully",
+    TIMETABLE_STATUS :"Time Table Status Uploaded Successfully",
+    ASSIGNMENT_STATUS:"Assignment Uploaded Successfully"
 }
 export const status = {
     ERROR : 500,
