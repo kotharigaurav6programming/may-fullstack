@@ -1,0 +1,18 @@
+{
+  "profile": [
+    {
+      "id": "20fc",
+      "username": "werty",
+      "email": "andrew@gmail.com",
+      "address": "345678",
+      "password": "1234567"
+    },
+    {
+      "id": "0fd3",
+      "username": "Jack Jackson",
+      "email": "jack@gmail.com",
+      "address": "Indore",
+      "password": "324567"
+    }
+  ]
+}

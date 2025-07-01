@@ -1,0 +1,40 @@
+import logo from './logo.svg';
+import './App.css';
+import { useEffect, useState } from 'react';
+
+function App() {
+  const [userData,setUserData] = useState([]);
+  useEffect(()=>{
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then(response=> response.json())
+        .then(arr=> {
+            setUserData(arr);
+        }).catch((error)=>{
+            console.log("Error : "+error);
+        })
+  },[]);
+  return (<>
+    <table border={1} cellSpacing={0} cellPadding={10}>
+        <tr>
+          <th>S.No</th>
+          <th>UserId</th>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Body</th>
+        </tr>
+        {
+          userData.map((obj,index)=>{
+            return (<tr>
+                <td>{index+1}</td>
+                <td>{obj.userId}</td>
+                <td>{obj.id}</td>
+                <td>{obj.title}</td>
+                <td>{obj.body}</td>
+            </tr>);
+          })
+        }
+    </table>
+  </>);
+}
+
+export default App;

@@ -1,25 +1,44 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import {createRoot} from 'react-dom/client';
+import Display from './Display.js';
 function MyComponent(){
-    const username = useRef();
-    const email = useRef();
-    const password = useRef();
-    const address = useRef();
-    
+    const [userObj,setUserObj] = useState({});
     const [userData,setUserData] = useState([]);
+    const [index,setIndex] = useState(-1);
+    const getData = (event)=>{
+                const {name,value} = event.target;
+                setUserObj({
+                    ...userObj,
+                    [name]:value
+                });
+            }
     const handleSubmit = (event)=>{
         event.preventDefault();
-        const obj = {
-            username : username.current.value,
-            email : email.current.value,
-            password : password.current.value,
-            address : address.current.value
+        if(index==-1){
+            setUserData([
+                ...userData,
+                userObj
+            ]);
+        }else{
+            userData.splice(index,1,userObj);
+            setUserData([...userData]);
+            setIndex(-1);
         }
-        setUserData([
-            ...userData,
-            obj
-        ]);
         event.target.reset();
+        setUserObj({
+            username:'',
+            email:'',
+            password:'',
+            address:''
+        })
+    }
+    const updateData = (objUser)=>{
+        setUserObj(objUser.obj);
+        setIndex(objUser.index);
+    }
+    const deleteData = (index)=>{
+        userData.splice(index,1);
+        setUserData([...userData]);
     }
     return (<>
         <h1>Fill Details</h1>
@@ -30,7 +49,8 @@ function MyComponent(){
             required 
             id='username'
             name='username'
-            ref={username}
+            value={userObj.username ?? ''}
+            onChange={getData}
         />
         <input
             type='email'
@@ -38,7 +58,8 @@ function MyComponent(){
             required 
             id='email'
             name='email'
-            ref={email}
+            value={userObj.email ?? ''}
+            onChange={getData}
         />
         <input
             type='password'
@@ -46,7 +67,8 @@ function MyComponent(){
             required 
             id='password'
             name='password'
-            ref={password}
+            value={userObj.password ?? ''}
+            onChange={getData}
         />
         <input
             type='text'
@@ -54,7 +76,8 @@ function MyComponent(){
             required 
             id='address'
             name='address'
-            ref={address}
+            value={userObj.address ?? ''}
+            onChange={getData}
         />
         <input
            type='submit'
@@ -65,27 +88,7 @@ function MyComponent(){
             value='reset'
         />
         </form>
-        <h1>Student Records</h1>
-        <table border='1' cellSpacing='0' cellPadding='10'>
-            <tr>
-                <th>S.No</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Password</th>
-                <th>Address</th>
-            </tr>
-        {
-            userData.map((obj,index)=>{
-                return(<tr>
-                    <td>{index+1}</td>
-                    <td>{obj.username}</td>
-                    <td>{obj.email}</td>
-                    <td>{obj.password}</td>
-                    <td>{obj.address}</td>
-                </tr>);
-            })
-        }
-        </table>
+        <Display userData={userData} update={updateData}  delete={deleteData}/>
     </>);
 }
 createRoot(document.getElementById("root")).render(<MyComponent/>);
