@@ -1,0 +1,43 @@
+#header{
+    height: auto;
+    background-color: black;
+    color:white;
+    padding: 1px;
+    font-size: 20px;
+}
+#footer{
+    clear: both;
+    height: 25px;
+    background-color: black;
+    color:white;
+    padding: 15px;
+}
+#sidebar{
+    font-size: 25px;
+    width: 25%;
+    background-color: darkslategrey;
+    color:white;
+    float: left;
+    height:420px;
+}
+#section{
+    width: 75%;
+    background-color: teal;
+    color:white;
+    float: left;
+    height:420px;
+}
+button{
+    font-size: 20px;
+    height: 50px;
+    color:white;
+    border-width: 0px;
+    padding: 15px;
+    background-color: black;
+    margin: 10px;
+}
+input{
+    font-size: 18px;
+    height: 45px;
+    width: 400px;
+}

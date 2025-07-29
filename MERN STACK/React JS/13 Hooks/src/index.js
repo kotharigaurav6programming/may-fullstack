@@ -1,43 +1,33 @@
-// concept of useCallback
+// concept of usememo and memo
 
-import React, { useCallback, useReducer, useState } from 'react';
+import React, {memo, useMemo, useState } from 'react';
 import {createRoot} from 'react-dom/client';
 
-function App(){
-    const [num1,setNum1] = useState();
-    const [num2,setNum2] = useState();
-    const [result,setResult] = useState();
-    const res = useCallback(()=>{
-        console.log("executes");
-        setResult(addition(num1,num2));
-    },[num1,num2]);
-    console.log("Callback redefined");
-    function addition(num1,num2){
-        return parseInt(num1)+parseInt(num2);
-    }
+const Memoized = memo((props)=>{
+    {console.log("Memoized component called");}
     return (<>
-        <input
-            placeholder='Enter First number'
-            type="text"
-            name="num1"
-            onChange={(event)=>{
-                setNum1(event.target.value)
-            }}
-        /><br/>
-        <input
-            placeholder='Enter second number'
-            type="text"
-            name="num2"
-            onChange={(event)=>{
-                setNum2(event.target.value)
-            }}
-        /> <br/>
-        <input
-            type="submit"
-            onClick={res}
-        />
+        Hello {props.fname} your surname is {props.lname}
+    </>);
+}); 
 
-        <h1>Result : {result}</h1>
+function UnMemoized(props){
+    {console.log("Unmemoized component called");}
+    return (<>
+        Hello {props.fname} your surname is {props.lname}
+    </>);
+}
+function App(){
+    const [fname,setFname] = useState("Andrew Andy");
+    const [lname,setLname] = useState("Anderson");
+    const [count,setCount] = useState(0);
+    const memoizedComponent = useMemo(()=> <Memoized fname={fname} lname={lname}/>,[fname,lname]);
+    return (<>
+        <h1>Counter : {count}</h1>
+        <button onClick={()=>{setCount(count+1);setFname("andy")}}>Click to Count</button>
+        <h1>Memoized component</h1>
+        {memoizedComponent}
+        <h1>UnMemoized component</h1>
+        <UnMemoized fname={fname} lname={lname}/>
     </>);
 }
 createRoot(document.getElementById("root")).render(<App/>);
