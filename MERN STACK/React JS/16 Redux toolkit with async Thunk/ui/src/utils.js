@@ -1,0 +1,1 @@
+export const requestedURL = "http://localhost:3000/user";

@@ -1,0 +1,21 @@
+✅ React sends the request using fetch.
+
+🔒 The browser checks the origin (localhost:3000) and destination (localhost:5000).
+
+🚫 If they are different origins, the browser says:
+“Wait! This is a cross-origin request. I need to check if the server (Express) allows it.”
+
+🛰️ So, before sending the actual request, the browser may send a CORS preflight request (OPTIONS) to Express.
+
+✅ If Express includes proper CORS headers like this:
+
+Access-Control-Allow-Origin: http://localhost:3000
+then the browser allows the real request to proceed.
+
+❌ If no CORS headers are present, the browser blocks the response — even if Express responds successfully!
+
+🤔 So why React doesn't get the response?
+Because React is not the one blocking it — the browser does. React just calls fetch, but the browser is the gatekeeper.
+
+🧠 Summary:
+Even though React sends the request and Express responds, the browser sits in the middle and blocks cross-origin responses unless the backend explicitly allows it using CORS headers.
