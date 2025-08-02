@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import '../style.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteData, resetMessage } from '../store/userSlice.js';
+import { deleteData, resetMessage, viewUserListThunk } from '../store/userSlice.js';
 import { useNavigate } from 'react-router-dom';
 function ViewUser(){
     const userStoreObj = useSelector(state=>state.user);
@@ -10,6 +10,7 @@ function ViewUser(){
        const dispatch = useDispatch();
         useEffect(()=>{
             dispatch(resetMessage(''));
+            dispatch(viewUserListThunk());
         },[]);
     return (<div style={{padding:"30px"}}>
         {

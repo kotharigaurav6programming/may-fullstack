@@ -15,3 +15,13 @@ export const addUserController = async (request,response)=>{
         response.send({status:false}); 
     }
 }
+export const viewUserController = async (request,response)=>{
+    try{
+        const result = await userSchema.find();
+        console.log("result : "+result);
+        response.send({status:true,result});        
+    }catch(error){
+        console.log("Error in viewUserController : "+error);
+        response.send({status:false}); 
+    }
+}
