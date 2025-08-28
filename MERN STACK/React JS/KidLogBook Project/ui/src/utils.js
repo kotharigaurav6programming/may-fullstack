@@ -1,0 +1,1 @@
+export const requestedAdminURL = "http://localhost:3000/admin";

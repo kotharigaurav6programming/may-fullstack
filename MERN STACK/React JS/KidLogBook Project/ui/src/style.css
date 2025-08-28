@@ -1,0 +1,84 @@
+#header{
+    height: 80px;
+    /* background-color: crimson; */
+}
+#logoImage{
+    height: 80px;
+    width: 100px;
+    margin-left: 50px;
+}
+#heading{
+    position: absolute;
+    margin-top: 25px;
+    font-size: 25px;
+    font-weight: 600;
+    margin-left: 25px;
+    font-family: cursive;
+    color:#234567;
+}
+#nav{
+    height: 43px;
+    background-color: #234567;
+    padding-top: 10px;
+}
+#navStyle{
+    color:white;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: cursive;
+    margin-left: 50px;
+}
+#banner{
+    height: 530px;
+    /* background-color: red; */
+}
+#bannerImage{
+    height: 530px;
+    width: 100%;
+}
+#leftSection{
+    height: 500px;
+    width: 35%;
+    padding: 5%;
+    /* background-color: red; */
+    float: left;
+}
+#rightSection{
+    height: 500px;
+    width: 55%;
+    /* background-color: green; */
+    float: left;
+}
+#rightImage{
+    height: 500px;
+    width: 80%;
+    margin-left: 80px;
+}
+input[type='email'],input[type='password'],input[type='text'],select,textarea,input[type='date'],input[type='number'],input[type='file']{
+    height: 30px;
+    width: 300px;
+    font-size: 16px;
+    text-align: center;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    margin: 5px;
+    margin-left: 60px;
+    border-bottom-color: black;
+    outline:0px;
+}
+input[type='submit'],input[type='reset'],button{
+    height: 35px;
+    width: 305px;
+    font-size: 16px;
+    text-align: center;
+    border-width: 0px;
+    margin: 5px;
+    margin-left: 60px;
+    background-color: #234567;
+    color:white;
+}
+#txt{
+    margin: 15px;
+    margin-left: 60px;
+}
