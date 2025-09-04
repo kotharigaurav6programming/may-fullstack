@@ -1,11 +1,12 @@
 import '../style.css';
 import login from '../assets/images/login.png';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 // import { adminLoginThunk } from '../store/adminSlice.js';
 import { Link, useNavigate } from 'react-router-dom';
-
+import { teacherLoginThunk } from '../store/teacherSlice.js';
 function TeacherLogin(){
+    const teacherObject = useSelector(state=>state.teacher);
     const [teacherObj,setTeacherObj] = useState({});
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -18,14 +19,15 @@ function TeacherLogin(){
     }
     const handleSubmit = (event)=>{
         event.preventDefault();
-        // dispatch(adminLoginThunk(adminObj));
-        // navigate('/admin/adminHome');
+         dispatch(teacherLoginThunk(teacherObj));
+         navigate('/teacher/teacherHome');
         event.target.reset();
     }
     return (<div>
         <div id="leftSection">
             <center>
                 <h1>Teacher Panel | Login Form</h1>
+                <h2>{teacherObject.message}</h2>
             </center>
             <form onSubmit={handleSubmit}>
                 <input

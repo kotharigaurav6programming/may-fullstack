@@ -20,7 +20,7 @@ function Navbar(){
                     setMenuItem(<>
                         <Link to='/admin/adminHome' id='navStyle'>Home</Link>
                         <Link to='' id='navStyle'>Students</Link>
-                        <Link to='' id='navStyle'>Teacher</Link>
+                        <Link to='/adminTeacherList' id='navStyle'>Teacher</Link>
                         <Link to='/adminAddSession' id='navStyle'>Add Session</Link>
                         <Link to='/adminAddClass' id='navStyle'>Add Class</Link>
                         <Link to='/adminAssignClass' id='navStyle'>Assign Class</Link>

@@ -94,10 +94,12 @@ export const teacherRegistrationLinkController = async (request,response)=>{
 export const adminViewTeacherListController = async (request,response)=>{
     try{
         const teacherData = await teacherSchema.find();
-        response.render("adminViewTeacherList.ejs",{email:request.adminPayload.email,teacherData:teacherData.reverse(),message:"",status:status.SUCCESS});
+        //response.render("adminViewTeacherList.ejs",{email:request.adminPayload.email,teacherData:teacherData.reverse(),message:"",status:status.SUCCESS});
+        response.status(200).send({email:request.adminPayload.email,teacherData:teacherData.reverse()});
     }catch(error){
        console.log("Error in adminViewTeacherListController : ",error);
-        response.render("adminLogin.ejs",{message:message.SOMETHING_WENT_WRONG, status:status.ERROR});    
+        //response.render("adminLogin.ejs",{message:message.SOMETHING_WENT_WRONG, status:status.ERROR});
+        response.status(500).send();    
     }
 }
 
@@ -113,11 +115,13 @@ export const adminVerifyTeacherController = async(request,response)=>{
         const result = await teacherSchema.updateOne({teacherId:teacherId},updateStatus);
         console.log("Result : ");
         const teacherData = await teacherSchema.find();
-        response.render("adminViewTeacherList.ejs",{email:request.adminPayload.email,teacherData:teacherData.reverse(),message:message.STATUS_VERIFIED,status:status.SUCCESS});
+        //response.render("adminViewTeacherList.ejs",{email:request.adminPayload.email,teacherData:teacherData.reverse(),message:message.STATUS_VERIFIED,status:status.SUCCESS});
         
+        response.status(200).send({email:request.adminPayload.email,teacherData:teacherData.reverse()});
     }catch(error){
         console.log("Error in adminVerifyTeacherController : ",error);
-        response.render("adminLogin.ejs",{message:message.SOMETHING_WENT_WRONG, status:status.ERROR});
+        //response.render("adminLogin.ejs",{message:message.SOMETHING_WENT_WRONG, status:status.ERROR});
+        response.status(500).send();
     }
 }
 

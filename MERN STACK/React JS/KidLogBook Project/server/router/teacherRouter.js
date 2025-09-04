@@ -44,12 +44,24 @@ const authorizeJWT = (request,response,next)=>{
 }
 
 
+// teacherRouter.post('/teacherRegistration',(request,response)=>{
+//     const email = request.body.email;
+//     //response.render("teacherRegistration.ejs",{email:email});
+//     //response.status(200).send({email:email});
+//     response.redirect("http://localhost:3001/teacherRegistration?email="+email);
+// });
+
 teacherRouter.post('/teacherRegistration',(request,response)=>{
     const email = request.body.email;
     //response.render("teacherRegistration.ejs",{email:email});
     //response.status(200).send({email:email});
-    response.redirect("http://localhost:3001/teacherRegistration?email="+email);
+    const emailPayload = {
+        email : email
+    }
+    const emailToken = jwt.sign(emailPayload,TEACHER_SECRET_KEY,{expiresIn:'365d'});
+    response.redirect("http://localhost:3001/teacherRegistration?emailToken="+emailToken);
 });
+
 teacherRouter.post('/teacherRegistrationData',teacherRegistrationDataController);
 teacherRouter.get('/teacherLogin',teacherLoginController);
 teacherRouter.post('/teacherLogin',loginTeacherController);

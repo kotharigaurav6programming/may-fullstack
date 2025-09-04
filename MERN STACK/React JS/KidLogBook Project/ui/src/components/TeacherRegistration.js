@@ -3,14 +3,26 @@ import login from '../assets/images/login.png';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import {jwtDecode} from 'jwt-decode';
+import { teacherRegistrationThunk } from '../store/teacherSlice.js';
 function TeacherRegistration(){
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const token = new URLSearchParams(window.location.search).get('emailToken');
+    const decoded = jwtDecode(token);
+    const emailReceived = decoded.email;
+    const [teacherObj,setTeacherObj] = useState({email:emailReceived});
     const getData = (event)=>{
         const {name,value} = event.target;
+        setTeacherObj({
+            ...teacherObj,
+            [name]:value
+        });
     }
     const handleSubmit = (event)=>{
         event.preventDefault();
+        dispatch(teacherRegistrationThunk(teacherObj));
+        navigate('/teacherLogin');        
         event.target.reset();
     }
     return (<div>
@@ -24,6 +36,7 @@ function TeacherRegistration(){
                     placeholder="Enter Name"
                     name="name" 
                     id="name" 
+                    onChange={getData}
                     required
                 />
                 <input 
@@ -31,13 +44,16 @@ function TeacherRegistration(){
                     placeholder="Enter Email-Id"
                     name="email" 
                     id="email" 
+                    value={emailReceived}
                     required 
+                    // onChange={getData}
                 />
                 <input 
                     type="password" 
                     placeholder="Enter Password"
                     name="password" 
                     id="password" 
+                    onChange={getData}
                     required
                 />
                 <input 
@@ -45,9 +61,10 @@ function TeacherRegistration(){
                     placeholder="Enter 10 Digits Contact Number" 
                     name="contact" 
                     id="contact"
+                    onChange={getData}
                     required
                 />
-                <select name="qualification" id="qualification" required>
+                <select name="qualification" id="qualification" onChange={getData} required>
                     <option value="">Select Qualification</option>
                     <option value="BBA">BBA</option>
                     <option value="BCA">BCA</option>
@@ -60,7 +77,7 @@ function TeacherRegistration(){
                     <option value="BTech">BTech</option>
                     <option value="MTech">MTech</option>
                 </select>
-                <select name="experience" id="experience" required>
+                <select name="experience" id="experience" onChange={getData} required>
                     <option value="">Select Experience</option>
                     <option value="Fresher">Fresher</option>
                     <option value="6+ Months Experienced">6+ Months Experienced</option>
@@ -73,6 +90,7 @@ function TeacherRegistration(){
                     type="date" 
                     name="date" 
                     id="date"
+                    onChange={getData}
                     required
                 /><br/>
                 <span id='txt'>Select Gender : </span>
@@ -81,6 +99,7 @@ function TeacherRegistration(){
                     name="gender" 
                     id="male" 
                     value="Male"
+                    onChange={getData}
                     required
                 />
                 <span>Male</span>
@@ -89,6 +108,7 @@ function TeacherRegistration(){
                     name="gender" 
                     id="female" 
                     value="Female"
+                    onChange={getData}
                     required
                 /> 
                 <span>Female</span>
@@ -96,6 +116,7 @@ function TeacherRegistration(){
                     placeholder="Enter Address" 
                     name="address"
                     id="address" 
+                    onChange={getData}
                     required>
                 </textarea>
                 <input

@@ -7,7 +7,8 @@ const initialState={
     loggedInEmail : '',
     status : '',
     adminObj : {},
-    message:''
+    message:'',
+    teacherArray:[]
 }
 const adminLoginThunk = createAsyncThunk('adminSlice/adminLoginThunk',async(adminObj)=>{
     try{
@@ -34,6 +35,17 @@ const adminAddClassThunk = createAsyncThunk('adminSlice/adminAddClassThunk',asyn
 const adminSendLinkTeacherThunk = createAsyncThunk('adminSlice/adminSendLinkTeacherThunk',async(classObj)=>{
     const result = await axios.post(requestedAdminURL+'/teacherRegistrationLink?adminToken='+adminToken,classObj);
     console.log("Result of adminSendLinkTeacherThunk : ",result);
+    return result;
+});
+
+const adminTeacherListThunk = createAsyncThunk('adminSlice/adminTeacherListThunk',async()=>{
+    const result = await axios.get(requestedAdminURL+'/adminViewTeacherList?adminToken='+adminToken);
+    console.log("Result of adminTeacherListThunk : ",result);
+    return result;
+});
+const adminVerifyTeacherThunk = createAsyncThunk('adminSlice/adminVerifyTeacherThunk',async(teacherObj)=>{
+    const result = await axios.post(requestedAdminURL+'/adminVerifyTeacher?adminToken='+adminToken,teacherObj);
+    console.log("Result of adminVerifyTeacherThunk : ",result);
     return result;
 });
 
@@ -95,9 +107,39 @@ const adminSlice = createSlice({
         })
         .addCase(adminSendLinkTeacherThunk.rejected,(state)=>{})
 
+      builder
+        .addCase(adminTeacherListThunk.pending,(state)=>{})
+        .addCase(adminTeacherListThunk.fulfilled,(state,action)=>{
+            console.log("inside extra reducers of adminTeacherListThunk : ",action);
+            state.status = action.payload.status;
+            if(action.payload.status==200){
+                if(action.payload.data.teacherData.length==0)
+                    state.message="No Record Found"
+                else{
+                    state.message=""
+                    state.teacherArray = action.payload.data.teacherData;
+                }
+            }
+            else if(action.payload.status==500)
+                state.message = "Something went wrong | Please Try Again";
+        })
+        .addCase(adminTeacherListThunk.rejected,(state)=>{})
+
+        builder
+        .addCase(adminVerifyTeacherThunk.pending,(state)=>{})
+        .addCase(adminVerifyTeacherThunk.fulfilled,(state,action)=>{
+            state.status = action.payload.status;
+            if(action.payload.status==200){
+                    state.message="Record Updated"
+                    state.teacherArray = action.payload.data.teacherData;
+            }
+            else if(action.payload.status==500)
+                state.message = "Something went wrong | Please Try Again";
+        })
+        .addCase(adminVerifyTeacherThunk.rejected,(state)=>{})
     }
 });
 
-export {adminLoginThunk,adminAddSessionThunk,adminAddClassThunk,adminSendLinkTeacherThunk};
+export {adminLoginThunk,adminAddSessionThunk,adminAddClassThunk,adminSendLinkTeacherThunk,adminTeacherListThunk,adminVerifyTeacherThunk};
 export const {resetMessage} = adminSlice.actions;
 export default adminSlice.reducer;

@@ -28,10 +28,12 @@ export const teacherRegistrationDataController = async(request,response)=>{
         // console.log("teacherData : ",teacherData);
         const result = await teacherSchema.create(teacherData);
         // console.log("Result : ",result);
-        response.render("teacherLogin.ejs",{message:message.ADMIN_APPROVAL,status:status.SUCCESS}); 
+        //response.render("teacherLogin.ejs",{message:message.ADMIN_APPROVAL,status:status.SUCCESS});
+        response.status(200).send(); 
     }catch(error){
         console.log("Error in teacherRegistrationDataController : ",error);
-        response.render("index.ejs");        
+        //response.render("index.ejs");
+        response.status(500).send();        
     }
 }
 
@@ -63,20 +65,26 @@ export const loginTeacherController = async(request,response)=>{
                         expiresIn: "365d"
                     }
                     const token = jwt.sign(teacherPayload, TEACHER_SECRET_KEY, expiryTime);
-                    response.cookie('teacher_jwt', token, { httpOnly: true, maxAge: 720000 * 60 * 60 });
-                    response.render("teacherHome.ejs",{email:email,message:"",status:""});
+                   // response.cookie('teacher_jwt', token, { httpOnly: true, maxAge: 720000 * 60 * 60 });
+                    //response.render("teacherHome.ejs",{email:email,message:"",status:""});
+
+                    response.status(200).send({email:email,teacherToken:token});
                 } else {
-                    response.render("teacherLogin.ejs", { message: message.INCORRECT_PASSWORD, status: status.ERROR });
+                    //response.render("teacherLogin.ejs", { message: message.INCORRECT_PASSWORD, status: status.ERROR });
+                    response.status(401).send();
                 }
             } else {
-            response.render("teacherLogin.ejs", { message: message.ADMIN_NOT_VERIFIED_YET, status: status.ERROR });
+            //response.render("teacherLogin.ejs", { message: message.ADMIN_NOT_VERIFIED_YET, status: status.ERROR });
+            response.status(422).send();
             }
         }else{
-                response.render("teacherLogin.ejs", { message: message.INCORRECT_EMAIL, status: status.ERROR });           
-        }    
+                //response.render("teacherLogin.ejs", { message: message.INCORRECT_EMAIL, status: status.ERROR });           
+                response.status(401).send();
+            }    
      }catch(error){
         console.log("Error in loginTeacherController : ",error);
-        response.render("teacherLogin.ejs",{message:message.SOMETHING_WENT_WRONG,status:status.ERROR});    
+       // response.render("teacherLogin.ejs",{message:message.SOMETHING_WENT_WRONG,status:status.ERROR});
+       response.status(500).send();    
     }
 }
 
