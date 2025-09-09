@@ -26,6 +26,23 @@ function Navbar(){
                         <Link to='/adminAssignClass' id='navStyle'>Assign Class</Link>
                         <Link to='' id='navStyle'>Logout</Link>
                     </>);
+            }else if(navShowObj.navShow=="teacher"){
+                    setMenuItem(<>
+                        <Link to='/teacher/teacherHome' id='navStyle'>Home</Link>
+                        <Link to='' id='navStyle'>ClassAssigned</Link>
+                        <Link to='' id='navStyle'>Announcement</Link>
+                        <Link to='' id='navStyle'>UpdateProfile</Link>
+                        <Link to='' id='navStyle'>Logout</Link>
+                    </>);
+            }else if(navShowObj.navShow=="student"){
+                    setMenuItem(<>
+                        <Link to='/student/studentHome' id='navStyle'>Home</Link>
+                        <Link to='' id='navStyle'>Meal</Link>
+                        <Link to='' id='navStyle'>TimeTable</Link>
+                        <Link to='' id='navStyle'>Assignment</Link>
+                        <Link to='' id='navStyle'>Update Password</Link>
+                        <Link to='' id='navStyle'>Logout</Link>
+                    </>);
             }
         },500);
         return ()=> clearInterval(timer);

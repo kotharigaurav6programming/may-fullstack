@@ -3,14 +3,39 @@ import login from '../assets/images/login.png';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import {jwtDecode} from 'jwt-decode';
+import { studentRegistrationThunk } from '../store/studentSlice.js';
 function StudentRegistration(){
+    const token = new URLSearchParams(window.location.search).get('emailToken');
+    const decoded = jwtDecode(token);
+    const emailReceived = decoded.email;    
+    const [studentObj,setStudentObj] = useState({email:emailReceived});
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const getData = (event)=>{
-        const {name,value} = event.target;
+        var {name,value} = event.target;
+        if(event.target.type=="file"){
+            value = event.target.files[0];
+            setStudentObj({
+                ...studentObj,
+                [name]:value
+            })
+        }else{
+            setStudentObj({
+                ...studentObj,
+                [name]:value
+            });
+        }
     }
     const handleSubmit = (event)=>{
         event.preventDefault();
+        const formData = new FormData();
+        for(var key in studentObj){
+            if(studentObj[key])
+                formData.append(key,studentObj[key]);
+        }
+        dispatch(studentRegistrationThunk(formData));
+        navigate('/studentLogin');
         event.target.reset();
     }
     return (<div>
@@ -24,6 +49,7 @@ function StudentRegistration(){
                     placeholder="Enter Name"
                     name="name" 
                     id="name" 
+                    onChange={getData}
                     required
                 />
                 <input 
@@ -31,6 +57,8 @@ function StudentRegistration(){
                     placeholder="Enter Email-Id"
                     name="email" 
                     id="email" 
+                    onChange={getData}
+                    value={emailReceived}
                     required
                 />
                 <input 
@@ -38,6 +66,7 @@ function StudentRegistration(){
                     placeholder="Enter Password"
                     name="password" 
                     id="password" 
+                    onChange={getData}
                     required
                 />
                 <input 
@@ -45,12 +74,14 @@ function StudentRegistration(){
                     placeholder="Enter 10 Digits Contact Number" 
                     name="contact" 
                     id="contact"
+                    onChange={getData}
                     required
                 />
                 <textarea 
                     placeholder="Enter Address" 
                     name="address"
-                    id="address" 
+                    id="address"
+                    onChange={getData} 
                     required>
                 </textarea> <br/>
                 <span id="txt">Select Gender : </span>
@@ -59,6 +90,7 @@ function StudentRegistration(){
                     name="gender" 
                     id="male" 
                     value="Male"
+                    onChange={getData}
                     required 
                 />
                 <span>Male</span>
@@ -67,6 +99,7 @@ function StudentRegistration(){
                     name="gender" 
                     id="female" 
                     value="Female"
+                    onChange={getData}
                     required 
                 /> 
                 <span>Female</span> <br/>
@@ -75,6 +108,7 @@ function StudentRegistration(){
                     type="date" 
                     name="date" 
                     id="date"
+                    onChange={getData}
                     required
                 />
                 <input 
@@ -82,6 +116,7 @@ function StudentRegistration(){
                     placeholder="Enter Guardian Name"
                     name="guardianName" 
                     id="guardianName" 
+                    onChange={getData}
                     required 
                 />
                 <input 
@@ -89,6 +124,7 @@ function StudentRegistration(){
                     placeholder="Enter Guardian Contact" 
                     name="guardianContact" 
                     id="guardianContact"
+                    onChange={getData}
                     required 
                 />
                 <input 
@@ -96,6 +132,7 @@ function StudentRegistration(){
                     placeholder="Enter Guardian Address" 
                     name="guardianAddress" 
                     id="guardianAddress"
+                    onChange={getData}
                     required 
                 />
                 <input 
@@ -103,6 +140,7 @@ function StudentRegistration(){
                     placeholder="Enter Admission Year" 
                     name="admissionYear" 
                     id="admissionYear"
+                    onChange={getData}
                     required 
                     min={0}
                 />
@@ -110,6 +148,7 @@ function StudentRegistration(){
                     type="file" 
                     name="profile" 
                     id="profile"
+                    onChange={getData}
                     required/>
                 <input
                     type="submit"

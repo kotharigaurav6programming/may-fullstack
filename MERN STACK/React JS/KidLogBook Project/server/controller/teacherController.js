@@ -104,16 +104,19 @@ export const studentRegistrationLinkController = async (request,response)=>{
            mailer.mailer(studentEmail,true,(value)=>{
                if(value){
                    console.log("Mail Sent Successfully");
-                   response.render("teacherHome.ejs",{email:request.teacherPayload.email,message:message.MAIL_SENT, status:status.SUCCESS});
+                  // response.render("teacherHome.ejs",{email:request.teacherPayload.email,message:message.MAIL_SENT, status:status.SUCCESS});
+                   response.status(200).send({email:request.teacherPayload.email});
                }else{
                    console.log("Error in studentRegistrationLinkController inside try : ",error);
-                   response.render("teacherHome.ejs",{email:request.teacherPayload.email,message:message.MAIL_NOT_SENT, status:status.ERROR});      
+                  // response.render("teacherHome.ejs",{email:request.teacherPayload.email,message:message.MAIL_NOT_SENT, status:status.ERROR});    
+                   response.status(502).send({email:request.teacherPayload.email});  
                }
            });
    
        }catch(error){
            console.log("Error in studentRegistrationLinkController : ",error);
-           response.render("teacherLogin.ejs",{message:message.SOMETHING_WENT_WRONG, status:status.ERROR});        
+           //response.render("teacherLogin.ejs",{message:message.SOMETHING_WENT_WRONG, status:status.ERROR});  
+            response.status(500).send();         
        }  
 }
 

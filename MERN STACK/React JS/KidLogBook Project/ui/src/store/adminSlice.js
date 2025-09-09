@@ -8,7 +8,11 @@ const initialState={
     status : '',
     adminObj : {},
     message:'',
-    teacherArray:[]
+    teacherArray:[],
+    classIdData : [],
+    studentIdData : [],
+    teacherIdData : [],
+    sessionIdData : []
 }
 const adminLoginThunk = createAsyncThunk('adminSlice/adminLoginThunk',async(adminObj)=>{
     try{
@@ -46,6 +50,17 @@ const adminTeacherListThunk = createAsyncThunk('adminSlice/adminTeacherListThunk
 const adminVerifyTeacherThunk = createAsyncThunk('adminSlice/adminVerifyTeacherThunk',async(teacherObj)=>{
     const result = await axios.post(requestedAdminURL+'/adminVerifyTeacher?adminToken='+adminToken,teacherObj);
     console.log("Result of adminVerifyTeacherThunk : ",result);
+    return result;
+});
+const adminAssignClassThunk = createAsyncThunk('adminSlice/adminAssignClassThunk',async()=>{
+    const result = await axios.get(requestedAdminURL+'/adminAssignClass?adminToken='+adminToken);
+    console.log("Result of adminAssignClassThunk : ",result);
+    return result;
+});
+
+const adminAddClassDBThunk = createAsyncThunk('adminSlice/adminAddClassDBThunk',async(assignClassObj)=>{
+    const result = await axios.post(requestedAdminURL+'/assignClass?adminToken='+adminToken,assignClassObj);
+    console.log("Result of adminAddClassDbThunk : ",result);
     return result;
 });
 
@@ -137,9 +152,44 @@ const adminSlice = createSlice({
                 state.message = "Something went wrong | Please Try Again";
         })
         .addCase(adminVerifyTeacherThunk.rejected,(state)=>{})
+
+        builder
+        .addCase(adminAssignClassThunk.pending,(state)=>{})
+        .addCase(adminAssignClassThunk.fulfilled,(state,action)=>{
+            console.log("inside extra reducers of adminAssignClassThunk : ",action);
+            state.status = action.payload.status;
+            if(action.payload.status==200){
+                state.classIdData = action.payload.data.classIdData;
+                state.studentIdData = action.payload.data.studentIdData;
+                state.teacherIdData = action.payload.data.teacherIdData;
+                state.sessionIdData = action.payload.data.sessionIdData;
+                console.log(state.classIdData);
+             console.log(state.studentIdData);
+             console.log(state.teacherIdData);
+             console.log(state.sessionIdData);   
+            }
+            else if(action.payload.status==500)
+                state.message = "Something went wrong | Please Try Again";
+        })
+        .addCase(adminAssignClassThunk.rejected,(state)=>{})
+
+        builder
+        .addCase(adminAddClassDBThunk.pending,(state)=>{})
+        .addCase(adminAddClassDBThunk.fulfilled,(state,action)=>{
+            console.log("inside extra reducers of class : ",action);
+            state.status = action.payload.status;
+            if(action.payload.status==201)
+                state.message = "Assigns Class Successfully";
+            else if(action.payload.status==204)
+                state.message = "Class Already Assigned";
+            else
+                state.message = "Error while Adding class";
+        })
+        .addCase(adminAddClassDBThunk.rejected,(state)=>{})
+
     }
 });
 
-export {adminLoginThunk,adminAddSessionThunk,adminAddClassThunk,adminSendLinkTeacherThunk,adminTeacherListThunk,adminVerifyTeacherThunk};
+export {adminLoginThunk,adminAddSessionThunk,adminAddClassThunk,adminSendLinkTeacherThunk,adminTeacherListThunk,adminVerifyTeacherThunk,adminAssignClassThunk,adminAddClassDBThunk};
 export const {resetMessage} = adminSlice.actions;
 export default adminSlice.reducer;

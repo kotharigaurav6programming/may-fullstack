@@ -4,39 +4,39 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { setNavShow } from '../store/commonSlice.js';
-import { adminSendLinkTeacherThunk, resetMessage } from '../store/adminSlice.js';
+import { teacherSendLinkParentThunk, resetMessage } from '../store/teacherSlice.js';
+
 function TeacherHome(){
      const teacherObj = useSelector(state=>state.teacher);
-    // const [emailObj,setEmailObj] = useState({});
+     const [emailObj,setEmailObj] = useState({});
      const navigate = useNavigate();
-    // const dispatch = useDispatch();
+     const dispatch = useDispatch();
 
      if(teacherObj.status==401 || teacherObj.status==500)
          navigate('/teacherLogin');
 
-    // useEffect(()=>{
-    //     dispatch(setNavShow("admin"));
-    //     dispatch(resetMessage(' '));
-    // },[]);
-    // const getData = (event)=>{
-    //     const {name,value} = event.target;
-    //     setEmailObj({
-    //         ...emailObj,
-    //         [name]:value
-    //     });
-    // }
-    // const handleSubmit = (event)=>{
-    //     event.preventDefault();
-    //     dispatch(adminSendLinkTeacherThunk(emailObj));
-    //     event.target.reset();
-    // }
+    useEffect(()=>{
+        dispatch(setNavShow("teacher"));
+        dispatch(resetMessage(' '));
+    },[]);
+    const getData = (event)=>{
+        const {name,value} = event.target;
+        setEmailObj({
+            ...emailObj,
+            [name]:value
+        });
+    }
+    const handleSubmit = (event)=>{
+        event.preventDefault();
+        dispatch(teacherSendLinkParentThunk(emailObj));
+        event.target.reset();
+    }
     return (<div>
-       <span>Teacher Home</span>
-        {/* <div id="leftSection" style={{marginTop:"-50px"}}>
+        <div id="leftSection" style={{marginTop:"-50px"}}>
             <center>
-                <h2>Admin Panel | {adminObj.loggedInEmail}</h2>
-                <h2>{adminObj.message}</h2>
-                <h3>Send Link To Teacher</h3>
+                <h2>Teacher Panel | {teacherObj.loggedInEmail}</h2>
+                <h2>{teacherObj.message}</h2>
+                <h3>Send Link To Parent</h3>
             </center>
             
             <form onSubmit={handleSubmit} method='post'>
@@ -54,7 +54,7 @@ function TeacherHome(){
 
         <div id="rightSection">
             <img src={login} id="rightImage" alt="adminLoginImage"/>
-        </div> */}
+        </div>
     </div>);
 }
 export default TeacherHome;

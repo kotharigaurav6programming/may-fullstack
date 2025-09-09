@@ -14,6 +14,7 @@ import AdminAddClass from './components/adminAddClass.js';
 import AdminAssignClass from './components/adminAssignClass.js';
 import AdminTeacherList from './components/adminTeacherList.js';
 import TeacherHome from './components/teacherHome.js';
+import StudentHome from './components/studentHome.js';
 function App() {
   return (<>
     <Header/>
@@ -26,6 +27,7 @@ function App() {
         <Route path='/teacherLogin' element={<TeacherLogin/>}/>
         <Route path='/teacher/teacherHome' element={<TeacherHome/>}/>
         <Route path='/studentLogin' element={<StudentLogin/>}/>        
+        <Route path='/student/studentHome' element={<StudentHome/>}/>
         <Route path='/teacherRegistration' element={<TeacherRegistration/>}/>
         <Route path='/studentRegistration' element={<StudentRegistration/>}/>        
         <Route path='/adminAddSession' element={<AdminAddSession/>}/>

@@ -2,6 +2,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from 'axios';
 import { requestedTeacherURL } from "../utils.js";
 import jscookie from 'js-cookie';
+var teacherToken = jscookie.get("teacherToken");
+
 const initialState={
     loggedInEmail : '',
     status : '',
@@ -29,6 +31,12 @@ const teacherRegistrationThunk = createAsyncThunk('teacherSlice/teacherRegistrat
         console.log("Error inside teacherRegistrationThunk : ",error);
     }
 });
+const teacherSendLinkParentThunk = createAsyncThunk('teacherSlice/teacherSendLinkParentThunk',async(classObj)=>{
+    const result = await axios.post(requestedTeacherURL+'/studentRegistrationLink?teacherToken='+teacherToken,classObj);
+    console.log("Result of teacherSendLinkParentThunk : ",result);
+    return result;
+});
+
 
 const teacherSlice = createSlice({
     name:'teacherSlice',
@@ -60,9 +68,24 @@ const teacherSlice = createSlice({
                 state.message = "Something went wrong";
         })
         .addCase(teacherRegistrationThunk.rejected,(state)=>{})
+
+         builder
+                .addCase(teacherSendLinkParentThunk.pending,(state)=>{})
+                .addCase(teacherSendLinkParentThunk.fulfilled,(state,action)=>{
+                    console.log("inside extra reducers of teacherSendLinkParentThunk : ",action);
+                    state.status = action.payload.status;
+                    if(action.payload.status==200)
+                        state.message = "Mail Sent Successfully";
+                    else if(action.payload.status==502)
+                        state.message = "Error while Sending Mail";
+                    else
+                        state.message = "Something went wrong | Please Try Again";
+                })
+                .addCase(teacherSendLinkParentThunk.rejected,(state)=>{})
+        
     }
 });
 
-export {teacherRegistrationThunk,teacherLoginThunk};
+export {teacherRegistrationThunk,teacherLoginThunk,teacherSendLinkParentThunk};
 export const {resetMessage} = teacherSlice.actions;
 export default teacherSlice.reducer;

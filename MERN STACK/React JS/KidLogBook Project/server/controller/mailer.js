@@ -12,7 +12,7 @@ const mailer = function(email,status,callback){
     const mailOption = {
         from : 'codingproject3@gmail.com',
         to : email,
-        subject : 'Registration Link for Teacher',
+        subject : 'Registration Link',
         html : `Hello ${email}, This mail is regarding registration link, which is given below. You must needs to click on the below link to Register Yourself. <br><br>
         <form action='http://localhost:3000/${endPoint}' method='post'>
             <input type='hidden' name='email' id='email' value='${email}'> 

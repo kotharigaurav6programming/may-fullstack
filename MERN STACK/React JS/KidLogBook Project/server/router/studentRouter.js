@@ -44,9 +44,18 @@ const authorizeJWT = (request,response,next)=>{
 }
 
 
+// studentRouter.post('/studentRegistration',(request,response)=>{
+//     const email = request.body.email;
+//     response.render("studentRegistration.ejs",{email:email});
+// });
+
 studentRouter.post('/studentRegistration',(request,response)=>{
     const email = request.body.email;
-    response.render("studentRegistration.ejs",{email:email});
+    const emailPayload = {
+        email : email
+    }
+    const emailToken = jwt.sign(emailPayload,STUDENT_SECRET_KEY,{expiresIn:'365d'});
+    response.redirect("http://localhost:3001/studentRegistration?emailToken="+emailToken);
 });
 
 studentRouter.post('/addStudent',addStudentController);
